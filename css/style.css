@@ -1,252 +1,418 @@
-/*Général*/
+/* ==========================================================================
+   Asians Dreams — Feuille de style globale
+   Variables de design, typographie, header/navigation, footer, boutons.
+   ========================================================================== */
 
+:root {
+	--color-primary: #a73737;
+	--color-primary-dark: #7c2727;
+	--color-gold: #a48a52;
+	--color-gold-dark: #7a663d;
+	--color-dark: #1b0707;
+	--color-text: #2b2b2b;
+	--color-card-bg: rgba(255, 255, 255, 0.94);
+	--radius: 12px;
+	--shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+	--font-heading: 'Raleway', 'Gill Sans', 'Gill Sans MT', sans-serif;
+	--font-body: 'Poppins', Arial, Helvetica, sans-serif;
+	--max-width: 1100px;
+}
 
-/*Pour le fond (images changeante) du site */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
 
 body {
+	margin: 0;
+	font-family: var(--font-body);
+	color: var(--color-text);
 	background-image: url("../images/fondimage3.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 	animation: changeBackground 400s linear infinite;
-  }
-  
-  @keyframes changeBackground {
+}
+
+@keyframes changeBackground {
 	0%, 100% {
-	  background-image: url("../images/fondimage3.jpg");
+		background-image: url("../images/fondimage3.jpg");
 	}
 	25% {
-	  background-image: url("../images/fondimage2.avif");
+		background-image: url("../images/fondimage2.avif");
 	}
 	50% {
-	  background-image: url("../images/fondimage4.jpg");
+		background-image: url("../images/fondimage4.jpg");
 	}
 	75% {
-	  background-image: url("../images/image_de_fond.jpg");
+		background-image: url("../images/image_de_fond.jpg");
 	}
 }
-  
-/*HEADER*/
 
-.titre_principale {
-	text-decoration: underline;
-	text-align: center;
+h1, h2, h3, h4 {
+	font-family: var(--font-heading);
 }
 
+a {
+	color: var(--color-primary-dark);
+}
 
-
+/* ==========================================================================
+   HEADER / BANNIÈRE
+   ========================================================================== */
 
 header {
 	position: relative;
 }
 
-
-/*classe banniere*/
+.banniere-wrapper {
+	position: relative;
+}
 
 .banniere {
 	width: 100%;
+	height: 260px;
+	object-fit: cover;
 	display: block;
 }
 
+.logo {
+	position: absolute;
+	top: 16px;
+	left: 20px;
+	font-family: var(--font-heading);
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+	letter-spacing: 0.5px;
+}
 
-/*classe header avec classe menu*/
+/* ==========================================================================
+   NAVIGATION PRINCIPALE
+   ========================================================================== */
+
+nav[aria-label="Menu principal"] {
+	position: absolute;
+	bottom: -24px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.menu-toggle {
+	display: none;
+}
 
 .menu {
-    position: absolute;
-    top: 74%;
-    left: 50%;
-    /* Ajustement pour centrer horizontalement */
-    transform: translateX(-50%);
-    background-color: #a48a52cc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #b2242433;
-    text-align: center;
-    width: fit-content;
-    font-weight: bold;
-	justify-content: center;
-    align-items: center; 
-    flex-wrap: wrap; 
+	position: relative;
+	background-color: rgba(164, 138, 82, 0.92);
+	border-radius: 50px;
+	box-shadow: var(--shadow);
+	list-style: none;
+	margin: 0;
+	padding: 8px;
 	display: flex;
-
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	font-weight: 600;
 }
 
 .menu li {
-    display: inline-block;
-    margin: 0 10px; /* Espace entre chaque élément */
+	margin: 0;
 }
 
 .menu li a {
-    text-decoration: none;
-    color: #0c0404; /* Couleur du texte des liens */
-    padding: 10px 20px; /* Espace à l'intérieur des liens */
+	display: inline-block;
+	text-decoration: none;
+	color: var(--color-dark);
+	padding: 10px 18px;
+	border-radius: 50px;
+	transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.menu li a:hover {
-    background-color: #1b0707; /* Couleur de fond au survol */
-    color: #a48a52cc; /* Couleur du texte au survol */
-    border-radius: 3px; /* Effet de bord arrondi au survol */
+.menu li a:hover,
+.menu li a:focus-visible {
+	background-color: var(--color-dark);
+	color: var(--color-gold);
 }
 
-
-
-
-/*HEADER*/
-
-header,
-
-
-/*MAIN*/
-
-main,
-
-
-/*FOOTER*/
-
-footer {
-	background-color: rgb(167, 55, 55);
-	padding: 20px;
-	max-width: 1000px;
-	margin: 10px auto;
+.menu li a.active {
+	background-color: var(--color-primary-dark);
+	color: #fff;
 }
 
-.footer-content {
-	justify-content: space-between;
-	align-items: center;
-	max-width: 1200px;
-	/* Largeur maximale du contenu */
-	background-color: #333;
-	/* Couleur de fond du footer */
+/* ==========================================================================
+   CONTENU PRINCIPAL
+   ========================================================================== */
+
+main {
+	background-color: var(--color-card-bg);
+	padding: 40px 20px;
+	max-width: var(--max-width);
+	margin: 50px auto 30px;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+}
+
+.titre_principale {
+	text-align: center;
+	font-size: 2.4rem;
+	margin-bottom: 5px;
+}
+
+.intro {
+	text-align: center;
+	max-width: 700px;
+	margin: 0 auto 30px;
+	font-size: 1.1rem;
+	color: #555;
+}
+
+.block-pere {
+	margin-bottom: 10px;
+}
+
+.home-section {
+	max-width: 800px;
+	margin: 0 auto 30px;
+	padding: 25px 30px;
+	border-left: 4px solid var(--color-gold);
+	background-color: #faf7f2;
+	border-radius: var(--radius);
+}
+
+.home-section h2 {
+	text-align: left;
+	margin-top: 0;
+}
+
+.home-section p {
+	line-height: 1.6;
+}
+
+/* ==========================================================================
+   BOUTONS
+   ========================================================================== */
+
+.btn {
+	display: inline-block;
+	background-color: var(--color-gold);
 	color: #fff;
 	text-decoration: none;
-	text-align: center;
+	font-weight: bold;
+	padding: 10px 22px;
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.footer a {
-	color: #d7c4c4;
-	/* Couleur des liens */
-	margin-right: 50px;
-	/* Espacement entre les liens */
-	text-align: center;
-	text-decoration: none;
+.btn:hover,
+.btn:focus-visible {
+	background-color: var(--color-gold-dark);
+	transform: translateY(-2px);
 }
 
-.footer-name {
-	text-align: center;
-	/* Centrage du texte */
-	padding: 10px;
-	/* Espacement intérieur */
-}
+/* ==========================================================================
+   RETOUR DU FORMULAIRE DE CONTACT
+   ========================================================================== */
 
-
-
-div.deux-colonnes {
-	display: flex;
-	flex-flow: row;
-}
-
-div.bleu {
-	min-width: 400px;
-	background-color: lightblue;
-	padding: 10px;
-	margin: 10px;
-}
-
-div.rouge {
-	min-width: 400px;
-	background-color: lightcoral;
-	padding: 10px;
-	margin: 10px;
-}
-
-
-
-.block-fils {
-	background-color: lightgreen;
-	border: 2px dashed green;
-	padding: 20px;
-}
-
-.block-petit-fils {
-	border: 2px solid blue;
-	padding: 20px;
-}
-
-/* Style pour aligner les emojis à côté des images */
-.image_with_emoji {
-	display: flex;
-	align-items: center;
-	/* Alignement vertical des éléments */
-}
-
-.image_with_emoji img {
-	margin-right: 10px;
-	/* Espacement entre l'image et l'emoji */
-}
-
-.image_with_emoji .emoji {
-	font-size: 24px;
-	/* Taille de police de l'emoji */
-}
-
-.block-pere h1, h2, h3 {
-	font-family: 'Arial', sans-serif;
-	text-align: center;
-	text-decoration: underline;
-}
-
-.block-pere {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 15px;
-}
-  
-.drapeau {
-    max-width: 50px; /* ajustation la taille maximale selon vos préférences */
-    max-height: 50px; /* ajustation la taille maximale selon vos préférences */
-    vertical-align: middle;
-    margin-right: 5px; /* espace entre l'image et le texte */
-}
-
-/* Bouton d'appel à l'action, réutilisé sur plusieurs pages */
-.btn {
-    display: inline-block;
-    background-color: #a48a52;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #7a663d;
-}
-
-/* Retour du formulaire de contact (succès / erreur) */
 .form-feedback {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+	max-width: 600px;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: var(--radius);
+	text-align: center;
 }
 
 .form-feedback--success {
-    background-color: #e3f3e1;
-    color: #1b4d1b;
+	background-color: #e3f3e1;
+	color: #1b4d1b;
 }
 
 .form-feedback--error {
-    background-color: #f8e0e0;
-    color: #7a1f1f;
+	background-color: #f8e0e0;
+	color: #7a1f1f;
 }
 
 .form-feedback ul {
-    list-style: disc;
-    text-align: left;
-    display: inline-block;
-    margin-bottom: 15px;
+	list-style: disc;
+	text-align: left;
+	display: inline-block;
+	margin-bottom: 15px;
 }
 
 .form-feedback blockquote {
-    font-style: italic;
-    margin: 15px 0;
+	font-style: italic;
+	margin: 15px 0;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+	background-color: var(--color-primary);
+	padding: 25px 20px;
+	max-width: var(--max-width);
+	margin: 10px auto 30px;
+	border-radius: var(--radius);
+}
+
+.footer-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	color: #fff;
+	text-align: center;
+}
+
+.footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px 24px;
+}
+
+.footer a {
+	color: #f3e8d8;
+	text-decoration: none;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+	text-decoration: underline;
+}
+
+.footer-name {
+	font-size: 0.9rem;
+	opacity: 0.9;
+}
+
+.footer-name p {
+	margin: 0;
+}
+
+/* ==========================================================================
+   DRAPEAUX FR/EN
+   ========================================================================== */
+
+.drapeau {
+	max-width: 40px;
+	max-height: 40px;
+	vertical-align: middle;
+	border-radius: 4px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+	main {
+		margin-top: 90px;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		background-attachment: scroll;
+	}
+
+	.banniere {
+		height: 180px;
+	}
+
+	.logo {
+		font-size: 1.1rem;
+		top: 10px;
+		left: 12px;
+	}
+
+	nav[aria-label="Menu principal"] {
+		bottom: auto;
+		transform: none;
+		left: 0;
+		right: 0;
+		width: auto;
+		justify-content: flex-end;
+		padding-right: 10px;
+		top: 10px;
+		position: absolute;
+	}
+
+	.menu-toggle {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 5px;
+		width: 42px;
+		height: 42px;
+		background-color: rgba(27, 7, 7, 0.85);
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.menu-toggle span {
+		display: block;
+		width: 22px;
+		height: 2px;
+		margin: 0 auto;
+		background-color: #fff;
+	}
+
+	.menu {
+		display: none;
+		position: absolute;
+		top: 52px;
+		right: 0;
+		flex-direction: column;
+		align-items: stretch;
+		border-radius: 12px;
+		width: 220px;
+		padding: 10px;
+	}
+
+	.menu.menu--open {
+		display: flex;
+	}
+
+	.menu li a {
+		display: block;
+		text-align: center;
+		padding: 12px;
+	}
+
+	main {
+		margin: 20px 10px;
+		padding: 25px 15px;
+	}
+
+	.home-section {
+		padding: 18px 18px;
+	}
+
+	footer {
+		margin: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.titre_principale {
+		font-size: 1.8rem;
+	}
+
+	.banniere {
+		height: 140px;
+	}
 }

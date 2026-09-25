@@ -6,6 +6,7 @@
 
     echo $twig->render('celebrite.twig', [
         'titre' => 'K-Pop',
+        'page' => 'kpop',
         'all_articles' => $categorie2,
         'categorie' => 'celebrite',
         'lang' => $lang,

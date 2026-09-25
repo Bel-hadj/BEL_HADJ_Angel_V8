@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentIndex = 0;
     slides.forEach((slide, index) => {
-        slide.style.display = index === 0 ? 'block' : 'none';
+        slide.classList.toggle('active', index === 0);
     });
 
     function nextSlide() {
-        slides[currentIndex].style.display = 'none';
+        slides[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].style.display = 'block';
+        slides[currentIndex].classList.add('active');
     }
 
-    setInterval(nextSlide, 5000); // Change de diapositive toutes les 5 secondes
+    setInterval(nextSlide, 5000); // Change de diapositive toutes les 5 secondes (fondu enchaîné)
 });

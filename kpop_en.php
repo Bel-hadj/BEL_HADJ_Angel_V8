@@ -5,6 +5,7 @@
     include('include/data_kpop_en.php');
     echo $twig->render('celebrite.twig', [
         'titre' => 'K-Pop',
+        'page' => 'kpop',
         'all_articles' => $categorie2,
         'categorie' => 'celebrite',
         'lang' => $lang,

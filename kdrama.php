@@ -6,6 +6,7 @@
 
     echo $twig->render('kdrama.twig', [
         'titre' => 'K-Dramas',
+        'page' => 'kdrama',
         'categorie' => 'kdramas',
         'all_articles' => $categorie3,
         'lang' => $lang,

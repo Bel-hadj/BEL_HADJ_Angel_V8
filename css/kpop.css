@@ -1,40 +1,34 @@
-/* Styles généraux */
+/* Page K-Pop */
 
 .conteneur_26 {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
-    max-width: 1200px;
+    gap: 30px;
+    max-width: var(--max-width, 1100px);
     margin: 0 auto;
 }
 
 .sidebar_4 {
-    flex: 0 0 25%;
+    flex: 0 0 220px;
+    position: sticky;
+    top: 20px;
 }
 
 .contenu_30 {
-    flex: 0 0 75%;
+    flex: 1;
+    min-width: 0;
 }
 
 .liste_du_aside_1 {
-    margin-top: 20px;
     padding: 20px;
     background-color: #f0f0f0;
-    border-radius: 10px;
-    height: 99.3%;
-    width: 200px;
+    border-radius: var(--radius, 10px);
+    width: 220px;
 }
-
 
 .liste_4 {
     list-style: none;
     padding: 0;
-    text-decoration: underline;
-    padding-bottom: 1280px;
-}
-
-.liste_4 {
-    list-style: none;
 }
 
 .liste_4 li {
@@ -43,18 +37,14 @@
 
 .article-link_56 {
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
+    color: var(--color-primary-dark, #7c2727);
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
 .article-link_56:hover {
-    color: #007bff; /* Changement de couleur au survol */
-}
-
-
-.article-link_56 {
-    text-decoration: none;
+    color: var(--color-gold-dark, #7a663d);
+    text-decoration: underline;
 }
 
 /* Styles spécifiques */
@@ -64,83 +54,116 @@
     font-size: 15px;
 }
 
-
 .drapeau_2 {
     margin-bottom: 20px;
 }
 
-.drapeau_4, .drapeau_9 {
-    max-width: 50px;
-    max-height: 50px;
+.drapeau_4,
+.drapeau_9 {
+    max-width: 40px;
+    max-height: 40px;
     vertical-align: middle;
-    margin-right: 5px;
-}    
-
+    border-radius: 4px;
+}
 
 .main-section_9 {
-    margin-left: 20px;
+    margin-left: 0;
 }
 
 .main-title_9 {
     font-size: 32px;
     text-align: center;
-    border: solid black;
-}
-
-@keyframes bougerTitre {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    border: 2px solid black;
+    border-radius: var(--radius, 10px);
+    padding: 10px;
+    margin-bottom: 25px;
 }
 
 .article_8 {
     margin-bottom: 30px;
     padding-bottom: 20px;
+    border-bottom: 1px solid #e2ddd3;
+}
+
+.article_8:last-child {
+    border-bottom: none;
 }
 
 .kpop_image_8 {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .image_gauche_3 {
-    margin-right: 20px;
-    animation: bougerImage 2s ease infinite alternate;
-}
-
-@keyframes bougerImage {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(5px);
-    }
+    flex-shrink: 0;
 }
 
 .article-image_152 {
     width: 200px;
-    height: auto;
-    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius, 10px);
+    box-shadow: var(--shadow, 0 4px 12px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.article-image_152:hover {
+    transform: scale(1.04);
 }
 
 .partie_droite_5 {
     flex: 1;
+    min-width: 0;
 }
 
 .article-title_12 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .article-subtitle_11 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
-    color: #110303;
+    color: #6b2323;
+    font-weight: normal;
 }
 
+.liste_de_description li {
+    list-style: none;
+}
+
+.liste_de_description li span {
+    font-weight: bold;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 900px) {
+    .conteneur_26 {
+        flex-direction: column;
+    }
+
+    .sidebar_4 {
+        position: static;
+        flex: none;
+        width: 100%;
+    }
+
+    .liste_du_aside_1 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .kpop_image_8 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .article-image_152 {
+        width: 100%;
+        max-width: 220px;
+        height: 220px;
+    }
+}
