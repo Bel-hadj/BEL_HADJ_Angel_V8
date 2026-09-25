@@ -1,52 +1,53 @@
 {% extends "base.twig" %}
 
 {% block main %}
+{% set m = t.mangas %}
+{% include "_page_hero.twig" with {eyebrow: m.eyebrow, title: m.title, lead: m.lead} only %}
 
-<div class="place_section">{# modèle 2 #}
-    <aside class="aside">
-        <div class="aside_content">
-            <p class="p">Plan de la page :</p>
+<div class="container catalog">
+	<aside class="catalog__side">
+		{% include "_toc.twig" with {title: m.plan, items: articles, prefix: 'manga'} only %}
+	</aside>
 
-            {% if lang == 'en' %}
-            <a href="mangas.php"><img class="drapeau" src="images/drapeau_francais.jpg"></a>
-            {% else %}
-            <a href="mangas_en.php"><img class="drapeau" src="images/drapeau_anglais.jpg"></a>
-            {% endif %}
-            <ul class="aside_list">
-                {% for article in all_articles %}
-                <li><a href="#{{ article.id }}">{{ article.titre }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-    </aside>
+	<div class="entries">
+		{% for article in articles %}
+		<article id="manga-{{ article.id }}" class="entry" aria-labelledby="manga-{{ article.id }}-title">
+			<div class="entry__media">
+				<img src="{{ article.image }}" alt="{{ fmt(m.cover_alt, article.titre) }}" width="250" height="375" loading="lazy">
+			</div>
 
-    <div class="section_mangas">
+			<div class="entry__body">
+				<header class="entry__head">
+					<h2 id="manga-{{ article.id }}-title">{{ article.titre }}</h2>
+					{% if article.sous_titre %}<p class="entry__subtitle">{{ article.sous_titre }}</p>{% endif %}
+					<ul class="chips">
+						{% for genre in article.genre|split(' - ') %}
+						<li class="chip chip--accent">{{ genre }}</li>
+						{% endfor %}
+					</ul>
+				</header>
 
-        <section>
-            <h1 class="mangas_title"> Top Mangas Shonen </h1>
-            {# modèle 1 #}
-            {% for mangas in all_articles %}
+				<h3>{{ m.summary }}</h3>
+				{% for paragraph in article.texte %}
+				<p>{{ paragraph }}</p>
+				{% endfor %}
 
-            <h2 id="{{ mangas.id }}">{{ mangas.titre }}</h2> {# Ajout de l'ID de l'article ici #}
-            {# modèle du tome 1#}
-            <article class="mangas_article">
-                <img src="{{ mangas.image }}" class="mangas_image">
-                <div class="mangas_info">
-                    <p><span>Résumé :</span> {{ mangas.texte }}</p>
-                    <p><span>Description :</span> {{ mangas.description }}</p>
-                    <p><span>Genre :</span> {{ mangas.genre }}</p>
-                    <p><span>Date de sortie :</span> {{ mangas.date }}</p>
-                    <p><span>Nombre de tome :</span> {{ mangas.nombre_de_tomes }}</p>
-                    <p><span>Nombre de pages :</span> {{ mangas.nombre_de_pages }}</p>
-                    <p><span>Note :</span> {{ mangas.note }}</p>
-                    <p><span>Prix :</span> {{ mangas.prix }}</p>
-                </div>
-            </article>
-
-            {% endfor %}
-        </section>
-    </div>
-
+				<h3>{{ m.about }}</h3>
+				<p>{{ article.description }}</p>
+				<dl class="facts">
+					<div><dt>{{ m.labels.auteurs }}</dt><dd>{{ article.auteurs|join(', ') }}</dd></div>
+					<div><dt>{{ m.labels.date }}</dt><dd>{{ article.date }}</dd></div>
+					<div><dt>{{ m.labels.nombre_de_tomes }}</dt><dd>{{ article.nombre_de_tomes }}</dd></div>
+					<div><dt>{{ m.labels.nombre_de_pages }}</dt><dd>{{ article.nombre_de_pages }}</dd></div>
+					<div><dt>{{ m.labels.note }}</dt><dd>{{ article.note }}</dd></div>
+					<div><dt>{{ m.labels.prix }}</dt><dd>{{ article.prix }}</dd></div>
+					{% if article.theme is defined %}
+					<div><dt>{{ m.labels.theme }}</dt><dd>{{ article.theme }}</dd></div>
+					{% endif %}
+				</dl>
+			</div>
+		</article>
+		{% endfor %}
+	</div>
 </div>
-
-{% endblock main %}
+{% endblock %}

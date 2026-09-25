@@ -1,17 +1,17 @@
 <?php
 
-// Initialise Twig
-include('include/twig.php');
-$twig = init_twig();
+require_once __DIR__ . '/include/twig.php';
 
-// Lancement du moteur Twig :
-// $twig->render($modele-de-page, $tableau-de-variables)
-//
-// Le premier paramètre est le nom du modèle de page (le fichier Twig) à utiliser
-//
-// Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
-// Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
-echo $twig->render('base.twig', [
-	'titre' => 'Page d\'accueil',
-	'slogan' => 'Un message de bienvenu sur ma page d\'accueil. Attention les guillements doivent être échappées (avec un anti-slash)'
-]);
+$lang = normalize_lang($lang ?? 'fr');
+$suffix = $lang === 'en' ? '_en' : '';
+
+// Nombre de fiches de chaque rubrique, affiché sur les cartes de l'accueil
+$counts = [];
+require __DIR__ . "/include/data_kdramas{$suffix}.php";
+$counts['kdrama'] = count($categorie3);
+require __DIR__ . "/include/data_kpop{$suffix}.php";
+$counts['kpop'] = count($categorie2);
+require __DIR__ . "/include/data_mangas{$suffix}.php";
+$counts['mangas'] = count($categorie1);
+
+render_page('accueil', $lang, ['counts' => $counts]);

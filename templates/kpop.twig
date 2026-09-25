@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+
+{% block main %}
+{% set k = t.kpop %}
+{% include "_page_hero.twig" with {eyebrow: k.eyebrow, title: k.title, lead: k.lead} only %}
+
+<div class="container catalog">
+	<aside class="catalog__side">
+		{% include "_toc.twig" with {title: k.plan, items: articles, prefix: 'kpop'} only %}
+	</aside>
+
+	<div class="entries">
+		{% for article in articles %}
+		<article id="kpop-{{ article.id }}" class="entry entry--wide" aria-labelledby="kpop-{{ article.id }}-title">
+			<div class="entry__media">
+				<img src="{{ article.image }}" alt="{{ fmt(k.photo_alt, article.titre) }}" width="750" height="330" loading="lazy">
+			</div>
+
+			<div class="entry__body">
+				<header class="entry__head">
+					<h2 id="kpop-{{ article.id }}-title">{{ article.titre }}</h2>
+				</header>
+
+				<h3>{{ k.facts }}</h3>
+				<dl class="facts">
+					{% for field, label in k.labels %}
+					<div><dt>{{ label }}</dt><dd>{{ attribute(article, field) }}</dd></div>
+					{% endfor %}
+				</dl>
+
+				<h3>{{ k.news }}</h3>
+				<h4>{{ article.sous_titre }}</h4>
+				{% for paragraph in article.texte %}
+				<p>{{ paragraph }}</p>
+				{% endfor %}
+			</div>
+		</article>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

@@ -1,17 +1,19 @@
 <?php
 
-// Initialise Twig
-include('include/twig.php');
-$twig = init_twig();
+require_once __DIR__ . '/include/twig.php';
+require_once __DIR__ . '/include/contact.php';
 
-// Lancement du moteur Twig :
-// $twig->render($modele-de-page, $tableau-de-variables)
-//
-// Le premier paramètre est le nom du modèle de page (le fichier Twig) à utiliser
-//
-// Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
-// Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
-echo $twig->render('contact.twig', [
-	'titre' => 'Page contact',
-	'message' => 'Un message de bienvenu sur ma page d\'accueil. Attention les guillements doivent être échappées (avec un anti-slash)'
+$lang = normalize_lang($lang ?? 'fr');
+
+// Message de confirmation affiché une seule fois après l'envoi (voir reception.php)
+start_contact_session();
+$sent = !empty($_SESSION['contact_sent']);
+unset($_SESSION['contact_sent']);
+
+render_page('contact', $lang, [
+	'csrf' => csrf_token(),
+	'sent' => $sent,
+	'errors' => [],
+	'form_errors' => [],
+	'old' => ['name' => '', 'email' => '', 'message' => ''],
 ]);

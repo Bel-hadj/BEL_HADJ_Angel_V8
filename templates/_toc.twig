@@ -1,0 +1,9 @@
+{# Plan de la page. Variables : title, items (liste des articles), prefix (préfixe des ancres) #}
+<nav class="toc" aria-labelledby="toc-title">
+	<p class="toc__title" id="toc-title">{{ title }}</p>
+	<ol>
+		{% for article in items %}
+		<li><a href="#{{ prefix }}-{{ article.id }}">{{ article.titre }}</a></li>
+		{% endfor %}
+	</ol>
+</nav>

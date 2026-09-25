@@ -1,104 +1,73 @@
 {% extends "base.twig" %}
 
 {% block main %}
+{% set a = t.about %}
+{% include "_page_hero.twig" with {eyebrow: a.eyebrow, title: a.title, lead: a.lead} only %}
 
-
-<section>
-    <h1 class="texte">L'Univers des Kdramas et Mangas</h1>
-
-    <h2>A propos</h2>
-
-    <h3>Pourquoi l'univers des Kdramas et Mangas ?</h3>
-    <p>J'ai choisi cet univers car c'est celui qui m'a passionné depuis mon enfance.
-        Les Kdramas et les Mangas sont des formes d'art uniques qui allient la puissance de la narration à l'expression
-        visuelle.
-        Cet univers réunit deux de mes passions : les Kdramas et les Mangas.</p>
-
-    <h3>Ma passion pour les Kdramas</h3>
-    <p>Pour moi, regarder un Kdrama est bien plus qu'un simple divertissement : c'est une expérience captivante qui
-        m'immerge dans des histoires vibrantes.
-        Dès les premiers épisodes, je suis transporté dans des mondes complexes et je m'attache aux personnages avec
-        intensité.
-        Chaque épisode est une nouvelle aventure, une occasion de découvrir des cultures différentes et des émotions
-        intenses.</p>
-
-    <h3>Ma passion pour les Mangas</h3>
-    <p>Les Mangas ne sont pas seulement des bandes dessinées : ce sont des portails vers des univers fantastiques qui
-        stimulent mon imagination.
-        Chaque page est une œuvre d'art, où les personnages prennent vie sous la plume des dessinateurs.
-        Les Mangas m'ont accompagné tout au long de ma vie et ils continuent à nourrir ma créativité et ma passion pour
-        la narration visuelle.</p>
-
-    <p>Les figurines de Kdramas et Mangas sont également un aspect important de ma passion.
-        Elles représentent les personnages que j'admire et me permettent de les avoir près de moi, dans ma vie
-        quotidienne.</p>
-
-    <section>
-        <h2>A propos de l'univers des Mangas et Kdramas</h2>
-        <div class="image-container">
-            <a href="https://www.mangas.fr/">
-                <img src="images/mangas_2.jpg" alt="Solo Leveling" class="manga-image">
-            </a>
-            <a href="https://dramacool.com.pa/">
-                <img src="images/glory.jpg" alt="The Glory" class="kdrama-image">
-            </a>
-        </div>
-    </section>
-    <section>
-        <h2>A propos de l'univers des Mangas et Kdramas</h2>
-        <div class="image-container">
-            <div class="emoji">😀</div>
-            <div class="emoji">😎</div>
-            <div class="emoji">😍</div>
-        </div>
-    </section>
-
-    <section class="condition_générale">
-        <h2>Conditions Générales d'Utilisation (CGU)</h2>
-        <h3>Article 1 – Objet</h3>
-        <p>Les présentes conditions générales d'utilisation (ci-après les « CGU ») ont pour objet de définir les
-            conditions d'accès et d'utilisation du site web <i>L'univers de la BD</i> édité par <i>Bel hadj Angel</i>.
-        </p>
-
-        <h3>Article 2 – Acceptation des CGU</h3>
-        <p>L'accès et l'utilisation du Site impliquent l'acceptation pleine et entière des CGU par l'utilisateur.
-            L'utilisateur reconnaît avoir pris connaissance des CGU et s'engage à les respecter.</p>
-
-        <h3>Article 3 – Description du Site</h3>
-        <p>Le Site est un site web hébergé sur le serveur TP2 de l'Université de Strasbourg, via l'IUT de Haguenau.</p>
-
-        <h3>Article 4 – Accès au Site</h3>
-        <p>Le Site est accessible gratuitement à tout utilisateur disposant d'une connexion internet. L'Éditeur se
-            réserve le droit de suspendre ou de fermer le Site à tout moment, sans préavis ni justification.</p>
-
-        <h3>Article 5 – Propriété intellectuelle</h3>
-        <p>Le contenu du Site est protégé par les droits de propriété intellectuelle de l'Éditeur. Toute reproduction,
-            représentation, modification, publication, adaptation de tout ou partie des éléments du Site, par quelque
-            moyen que ce soit, est interdite sans l'autorisation écrite et préalable de l'Éditeur.</p>
-
-        <h3>Article 6 – Responsabilité</h3>
-        <p>L'Éditeur ne peut être tenu responsable des dommages directs ou indirects causés par l'utilisation du Site.
-            L'utilisateur est seul responsable de l'utilisation qu'il fait du site et des dommages qu'il pourrait causer
-            à autrui.</p>
-
-        <h3>Article 7 – Données personnelles</h3>
-        <p>L'Éditeur s'engage à respecter la vie privée des utilisateurs et à protéger leurs données personnelles
-            conformément à la réglementation en vigueur.</p>
-
-        <h3>Article 8 – Modification des CGU</h3>
-        <p>L'Éditeur se réserve le droit de modifier les CGU à tout moment. Les modifications apportées aux CGU seront
-            applicables dès leur publication sur le Site.</p>
-
-        <h3>Article 9 – Litiges</h3>
-        <p>Les CGU sont soumises au droit français. Tout litige relatif aux CGU sera de la compétence exclusive des
-            tribunaux français.</p>
-
-        <h3>Article 10 – Contact</h3>
-        <p>Pour toute question relative aux CGU, l'utilisateur peut contacter Bel hadj Angel.</p>
-    </section>
-    <p class="contacter">A l'adresse suivante :
-        <a href="angel.bel-hadj@etu.unistra.fr">angel.bel-hadj@etu.unistra.fr</a>.
-    </p>
+<section class="container section" aria-labelledby="concept-title">
+	<h2 id="concept-title">{{ a.concept_title }}</h2>
+	<div class="about-split">
+		{% for paragraph in a.concept %}
+		<p>{{ paragraph }}</p>
+		{% endfor %}
+	</div>
 </section>
-{% endblock main %}
 
+<section class="container section" aria-labelledby="discover-title">
+	<div class="section__head">
+		<h2 id="discover-title">{{ a.discover_title }}</h2>
+	</div>
+	<div class="grid-3">
+		{% for item in a.discover %}
+		<a class="card card--link" href="{{ page_urls[item.link] }}">
+			<h3>{{ item.title }}</h3>
+			<p>{{ item.text }}</p>
+			<span class="tile__cta" aria-hidden="true">→</span>
+		</a>
+		{% endfor %}
+	</div>
+</section>
+
+<section class="container section" aria-labelledby="passion-title">
+	<div class="section__head">
+		<h2 id="passion-title">{{ a.passion_title }}</h2>
+	</div>
+	<div class="grid-3">
+		{% for item in a.passion %}
+		<div class="card">
+			<h3>{{ item.title }}</h3>
+			<p>{{ item.text }}</p>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<section class="container section" aria-labelledby="context-title">
+	<h2 id="context-title">{{ a.context_title }}</h2>
+	<div class="about-split">
+		<div>
+			{% for paragraph in a.context %}
+			<p>{{ paragraph }}</p>
+			{% endfor %}
+		</div>
+		<div>
+			<h3>{{ a.tech_title }}</h3>
+			<ul class="chips">
+				{% for tech in a.tech %}
+				<li class="chip chip--gold">{{ tech }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="container section legal" id="mentions-legales" aria-labelledby="legal-title">
+	<h2 id="legal-title">{{ a.legal_title }}</h2>
+	{% for item in a.legal %}
+	<details>
+		<summary>{{ item.title }}</summary>
+		<p>{{ item.text }}{% if loop.last %} <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>{% endif %}</p>
+	</details>
+	{% endfor %}
+</section>
+{% endblock %}

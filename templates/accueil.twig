@@ -1,0 +1,98 @@
+{% extends "base.twig" %}
+
+{% block title %}{{ t.site.name }} | {{ t.site.tagline }}{% endblock %}
+
+{% block main %}
+{% set h = t.home %}
+
+<section class="container hero" aria-labelledby="hero-title">
+	<div class="hero__grid">
+		<div>
+			<span class="eyebrow">{{ h.eyebrow }}</span>
+			<h1 id="hero-title">{{ h.title }}</h1>
+			<p class="lead">{{ h.lead }}</p>
+			<div class="btn-row">
+				<a class="btn btn--primary" href="{{ page_urls.kdrama }}">{{ h.cta_primary }}</a>
+				<a class="btn btn--ghost" href="{{ page_urls.a_propos }}">{{ h.cta_secondary }}</a>
+			</div>
+		</div>
+		<div class="hero__posters" aria-hidden="true">
+			<img src="images/image1.png" alt="" width="400" height="600">
+			<img src="images/kdrama102.jpg" alt="" width="600" height="800">
+			<img src="images/mangas10.jpg" alt="" width="636" height="1000">
+		</div>
+	</div>
+</section>
+
+<section class="container section" aria-labelledby="sections-title">
+	<div class="section__head">
+		<h2 id="sections-title">{{ h.sections_title }}</h2>
+		<p>{{ h.sections_lead }}</p>
+	</div>
+	<div class="grid-3">
+		{% for key, image in {'kdrama': 'images/kdrama102.jpg', 'kpop': 'images/bts1.jpg', 'mangas': 'images/mangas.jpg'} %}
+		{% set card = h.cards[key] %}
+		<article class="tile">
+			<div class="tile__media">
+				<img src="{{ image }}" alt="{{ card.alt }}" loading="lazy"{% if key == 'kdrama' %} style="object-position: center 25%"{% endif %}>
+			</div>
+			<div class="tile__body">
+				<h3><a class="tile__link" href="{{ page_urls[key] }}">{{ card.title }}</a></h3>
+				<p>{{ card.text }}</p>
+				<div class="tile__foot">
+					<span class="chip chip--gold">{{ fmt(h.entries, counts[key]) }}</span>
+					<span class="tile__cta" aria-hidden="true">{{ h.discover }} →</span>
+				</div>
+			</div>
+		</article>
+		{% endfor %}
+	</div>
+</section>
+
+<section class="container section" aria-labelledby="features-title">
+	<div class="section__head">
+		<h2 id="features-title">{{ h.features_title }}</h2>
+	</div>
+	<div class="grid-3">
+		{% for feature in h.features %}
+		<div class="card feature">
+			<span class="feature__num" aria-hidden="true">{{ loop.index }}</span>
+			<div>
+				<h3>{{ feature.title }}</h3>
+				<p>{{ feature.text }}</p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<section class="container section" aria-labelledby="gallery-title">
+	<div class="section__head">
+		<h2 id="gallery-title">{{ h.gallery_title }}</h2>
+		<p>{{ h.gallery_lead }}</p>
+	</div>
+	<div class="gallery" role="region" aria-roledescription="carousel" aria-label="{{ h.gallery_label }}"
+		data-label-pause="{{ h.gallery_pause }}" data-label-play="{{ h.gallery_play }}">
+		<ul class="gallery__track" tabindex="0">
+			{% for slide in h.gallery %}
+			<li class="gallery__slide"><img src="{{ slide.src }}" alt="{{ slide.alt }}" loading="lazy"></li>
+			{% endfor %}
+		</ul>
+		<div class="gallery__controls">
+			<button class="gallery__btn" type="button" data-gallery="prev" aria-label="{{ h.gallery_prev }}">←</button>
+			<button class="gallery__btn" type="button" data-gallery="next" aria-label="{{ h.gallery_next }}">→</button>
+			<button class="gallery__btn" type="button" data-gallery="toggle" aria-pressed="false" aria-label="{{ h.gallery_pause }}">❚❚</button>
+		</div>
+	</div>
+</section>
+
+<section class="container section">
+	<div class="cta-band">
+		<div>
+			<h2>{{ h.about_cta_title }}</h2>
+			<p>{{ h.about_cta_text }}</p>
+		</div>
+		<a class="btn btn--primary" href="{{ page_urls.a_propos }}">{{ h.about_cta_button }}</a>
+	</div>
+</section>
+{% endblock %}

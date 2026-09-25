@@ -2,4 +2,4 @@
 
 // Version anglaise : même contrôleur, langue forcée.
 $lang = 'en';
-require __DIR__ . '/kdrama.php';
+require __DIR__ . '/a_propos.php';

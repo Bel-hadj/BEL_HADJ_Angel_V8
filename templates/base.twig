@@ -1,92 +1,81 @@
+{# Gabarit commun à toutes les pages : en-tête, navigation, pied de page. #}
+{% set meta = t.meta[page] %}
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="{{ lang }}">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{ titre }} | Asians Dreams</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/kdramas.css">
-	<link rel="stylesheet" href="css/mangas.css">
-	<link rel="stylesheet" href="css/contact.css">
-	<link rel="stylesheet" href="css/a_propos.css">
-	<link rel="stylesheet" href="css/kpop.css">
-
-	<script src="carousel.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}{{ meta.title }} | {{ t.site.name }}{% endblock %}</title>
+	<meta name="description" content="{{ meta.description }}">
+	<meta name="theme-color" content="#0e0b16">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="{{ t.site.name }}">
+	<meta property="og:title" content="{{ meta.title }} | {{ t.site.name }}">
+	<meta property="og:description" content="{{ meta.description }}">
+	<meta property="og:locale" content="{{ lang == 'en' ? 'en_GB' : 'fr_FR' }}">
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<script>document.documentElement.classList.add('js');</script>
+	<script src="{{ asset('js/main.js') }}" defer></script>
 </head>
 
 <body>
-	<header role="banner"> {#HEADER#}
-		<img class="banniere" src="images/image20.jpg" alt="My name">
+	<a class="skip-link" href="#contenu">{{ t.site.skip }}</a>
 
-		<nav role="navigation" aria-label="Menu principal">
-		<ul class="menu">
-			<!-- Menu présent dans toutes les pages héritant (extends) de ce modèle j'ai changé tout -->
-			<li><a href="accueil.php">Accueil</a></li>
-			<li><a href="mangas.php">Mangas</a></li>
-			<li><a href="kpop.php">K-Selection</a></li>
-			<li><a href="kdrama.php">Kdramas</a></li>
-			<li><a href="a_propos.php">À propos</a></li>
-			<li><a href="contact.php">Contact</a></li>
-		</ul>
-		</nav>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="{{ home_url }}">
+				<span class="brand__mark" aria-hidden="true">AD</span>
+				<span>{{ t.site.name }}</span>
+			</a>
+
+			<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+				<span class="sr-only">{{ t.site.menu }}</span>
+				<span class="nav-toggle__bars" aria-hidden="true"></span>
+			</button>
+
+			<nav id="site-nav" class="site-nav" aria-label="{{ t.site.main_nav }}">
+				<ul>
+					{% for item in nav %}
+					<li><a href="{{ item.url }}"{% if item.current %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+					{% endfor %}
+				</ul>
+				<a class="lang-switch" href="{{ switch_url }}" hreflang="{{ switch_lang }}" lang="{{ switch_lang }}" title="{{ t.site.lang_switch_title }}">
+					<img src="images/{{ switch_lang == 'en' ? 'drapeau_anglais.jpg' : 'drapeau_francais.jpg' }}" alt="" width="22" height="22">
+					<span>{{ t.site.lang_label }}</span>
+				</a>
+			</nav>
+		</div>
 	</header>
 
-	<main>
-		{% block main %}
-		<div class="block-pere">
-
-			<h1 class="titre_principale">Asian K-Mangas</h1>
-
-
-			<section class="kdrama-section">
-				<h2>K-Dramas</h2>
-			</section>
-		</div>
-		<p>Les K-Dramas, abréviation de Korean Dramas, sont des séries télévisées sud-coréennes. Ils sont connus pour
-			leurs intrigues captivantes, leurs romances complexes et leurs performances d'acteurs de haute qualité.</p>
-		<p>Les K-Dramas sont populaires dans le monde entier et ont une base de fans dévouée qui apprécie la diversité
-			des genres, des comédies romantiques aux thrillers politiques.</p>
-		<p>Plongez-vous dans l'univers des K-Dramas et explorez une multitude de séries qui sauront vous divertir et
-			vous émouvoir.</p>
-
-		<section class="manga-section">
-			<h2>Mangas</h2>
-
-			<p>Les Mangas sont des bandes dessinées japonaises qui couvrent une vaste gamme de genres, des aventures
-				épiques aux récits fantastiques en passant par les tranches de vie et les romances.</p>
-			<p>Les Mangas sont appréciés pour leurs illustrations uniques, leurs histoires riches en émotions et leurs
-				personnages mémorables.</p>
-			<p>Plongez-vous dans l'univers des Mangas et découvrez des histoires passionnantes, des mondes imaginaires
-				fascinants et des aventures inoubliables.</p>
-		</section>
-
-		<div class="image_with_emoji">
-			<span class="emoji">😊🤣😂😘🥱</span>
-		</div>
-
-		{% endblock main %}
+	<main id="contenu" tabindex="-1">
+		{% block main %}{% endblock %}
 	</main>
-	
-	<footer role="contentinfo"> {# FOOTER #}
-		{% block footer %}
-		<nav role="navigation">
-			<div class="footer-content">
-				<div class="footer">
-					<a href="accueil.php">Accueil</a>
-					<a href="kdrama.php">K-Dramas</a>
-					<a href="mangas.php">Mangas</a>
-					<a href="kpop.php">k-Selection</a>
-					<a href="contact.php">Contact</a>
-					<a href="https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#">Mention légales</a>
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="footer-grid">
+				<div>
+					<a class="brand" href="{{ home_url }}">
+						<span class="brand__mark" aria-hidden="true">AD</span>
+						<span>{{ t.site.name }}</span>
+					</a>
+					<p>{{ t.site.footer_text }}</p>
 				</div>
-				<div class="footer-name">
-					<p>© 2024 Bel Hadj Angel. Tous droits réservés.</p>
-				</div>
+				<nav class="footer-nav" aria-label="{{ t.site.footer_nav }}">
+					<ul>
+						{% for item in nav %}
+						<li><a href="{{ item.url }}">{{ item.label }}</a></li>
+						{% endfor %}
+						<li><a href="{{ page_urls.a_propos }}#mentions-legales">{{ t.site.legal }}</a></li>
+					</ul>
+				</nav>
 			</div>
-		</nav>
-		{% endblock footer %}
+			<div class="footer-bottom">
+				<p>{{ fmt(t.site.copyright, year) }}</p>
+				<a href="#contenu">{{ t.site.back_to_top }}</a>
+			</div>
+		</div>
 	</footer>
 </body>
-
 </html>

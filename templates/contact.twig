@@ -1,59 +1,76 @@
 {% extends "base.twig" %}
 
 {% block main %}
+{% set c = t.contact %}
+{% include "_page_hero.twig" with {eyebrow: c.eyebrow, title: c.title, lead: c.lead} only %}
 
-    <section>
-        <h2>Contact</h2>
-        <form method="post" action="reception.php">
-            <fieldset>
-                <legend><b>A remplir :</b></legend>
-                <div>
-                    <label for="nb1">NOM et prénom :</label>
-                    <input type="text" name="nb1" />
-                </div>
-                <div>
-                    <label for="nb2">Adresse mail :</label>
-                    <input type="text" name="nb2" />
-                </div>
-                <div >
-                    <label for="nb3">Votre message :</label>
-                    <input class="messg" type="text" name="nb3" />
-                </div>
-                <div class="valid">
-                    <input type="submit" name="valider" value="OK" />
-                </div>
-            </fieldset>
-        </form>
-    </section>
+<div class="container contact-layout">
+	<section aria-label="{{ c.title }}">
+		{% if sent %}
+		<div class="alert alert--success" role="status">
+			<h2>{{ c.success_title }}</h2>
+			<p>{{ c.success_text }}</p>
+		</div>
+		{% else %}
 
-    <section id="carousel">
-        <h1 class="h1">K-Dramas ou Mangas : quelle est votre source d'inspiration ?</h1>
-        <div class="carousel">
-            <div class="slide">
-                <img src="images/kdrama5.png" alt="Kdrama 1">
-            </div>
-            <div class="slide">
-                <img src="images/mangas32.jpg" alt="Manga 1">
-            </div>
-            <div class="slide">
-                <img src="images/kdrama13.webp" alt="Kdrama 2">
-            </div>
-            <div class="slide">
-                <img src="images/mangas56.jpg" alt="Manga 2">
-            </div>
-            <div class="slide">
-                <img src="images/kdrama18.jpg" alt="kdrama 3">
-            </div>
-            <div class="slide">
-                <img src="images/kdrama26.jpg" alt="kdrama 4">
-            </div>
-            <div class="slide">
-                <img src="images/mangas60.jpg" alt="Manga 3">
-            </div>
-            <div class="slide">
-                <img src="images/mangas61.webp" alt="Manga 4">
-            </div>
-        </div>
-    </section>
-    
-{% endblock main %}
+		{% if errors or form_errors %}
+		<div class="alert alert--error" role="alert" tabindex="-1" id="form-errors">
+			<h2>{{ c.error_title }}</h2>
+			<ul>
+				{% for field, code in errors %}
+				<li><a href="#field-{{ field }}">{{ c.errors[code] }}</a></li>
+				{% endfor %}
+				{% for code in form_errors %}
+				<li>{{ c.errors[code] }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<br>
+		{% endif %}
+
+		<form class="form" method="post" action="reception.php" data-contact-form>
+			<input type="hidden" name="lang" value="{{ lang }}">
+			<input type="hidden" name="csrf" value="{{ csrf }}">
+
+			<p class="field__hint" style="margin:0">{{ c.required_note }}</p>
+
+			<div class="field">
+				<label for="field-name">{{ c.name }} <span class="req" aria-hidden="true">*</span></label>
+				<input type="text" id="field-name" name="name" value="{{ old.name }}" required minlength="2" maxlength="100" autocomplete="name"
+					{% if errors.name is defined %}aria-invalid="true" aria-describedby="error-name"{% endif %}>
+				{% if errors.name is defined %}<p class="field__error" id="error-name">{{ c.errors[errors.name] }}</p>{% endif %}
+			</div>
+
+			<div class="field">
+				<label for="field-email">{{ c.email }} <span class="req" aria-hidden="true">*</span></label>
+				<input type="email" id="field-email" name="email" value="{{ old.email }}" required maxlength="254" autocomplete="email"
+					{% if errors.email is defined %}aria-invalid="true" aria-describedby="error-email"{% endif %}>
+				{% if errors.email is defined %}<p class="field__error" id="error-email">{{ c.errors[errors.email] }}</p>{% endif %}
+			</div>
+
+			<div class="field">
+				<label for="field-message">{{ c.message }} <span class="req" aria-hidden="true">*</span></label>
+				<textarea id="field-message" name="message" required minlength="10" maxlength="2000"
+					{% if errors.message is defined %}aria-invalid="true" aria-describedby="error-message"{% endif %}>{{ old.message }}</textarea>
+				{% if errors.message is defined %}<p class="field__error" id="error-message">{{ c.errors[errors.message] }}</p>{% endif %}
+			</div>
+
+			{# Champ piège pour les robots : invisible, doit rester vide #}
+			<div class="hp" aria-hidden="true">
+				<label for="field-website">Website</label>
+				<input type="text" id="field-website" name="website" tabindex="-1" autocomplete="off">
+			</div>
+
+			<div><button class="btn btn--primary" type="submit">{{ c.submit }}</button></div>
+		</form>
+		{% endif %}
+	</section>
+
+	<aside class="card contact-aside">
+		<h2 style="font-size:1.3rem">{{ c.or_mail }}</h2>
+		<p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+		<p>{{ c.privacy }}</p>
+		<p><a href="{{ page_urls.a_propos }}#mentions-legales">{{ t.site.legal }}</a></p>
+	</aside>
+</div>
+{% endblock %}

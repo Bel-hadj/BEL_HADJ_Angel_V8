@@ -1,197 +1,144 @@
 <?php
 
-    //article 1//
-    $kdrama1 = [
+// K-Drama entries (English version).
+// 'resume' is a list of paragraphs; 'casting' pairs each actor with a photo.
+// Empty or missing fields are not displayed.
+
+$categorie3 = [
+    [
         'id' => 1,
         'titre' => 'Indulgence',
-        'sous_titre' => 'Want to flirt',
-        'image_1' => 'images/image1.png',
-        'sous_titre_1' => 'description',
-        'resume' => 'Following a tragic car accident, two childhood friends are separated. Several years later, they gathered as adoptive brothers and sisters. They questioned and tested each other, sailing in the labyrinth of love and potential family quarrels. After many tests, they worked together to discover the truth behind this fateful accident. They then lived happy forever.',
+        'sous_titre' => 'Desire to Flirt',
+        'poster' => 'images/image1.png',
+        'resume' => [
+            'After a tragic car accident, two childhood friends are separated. Years later they meet again as adoptive brother and sister. They question and test each other while navigating the maze of love and potential family feuds.',
+            'After many ordeals, they work together to uncover the truth behind that fateful accident.',
+        ],
         'episodes_total' => '13',
-        'durer' => '10 MN',
-        'diffuser_le' => 'Monday Tuesday Wednesday Thursday Friday Saturday Sunday',
+        'durer' => '10 min',
+        'diffuser_le' => 'Monday to Sunday',
         'reseau_origine' => 'Youku',
-        'pays' => 'Chinese',
-        'statue' => 'in progress',
+        'pays' => 'China',
+        'statue' => 'Completed',
         'sortie' => '2024',
-        'genre' => ' Novel ; Romance; Web series',
-        'image_2' => 'images/image2.png',
-        'image_3' => 'images/image3.png',
-        'image_4' => 'images/image4.png',
-        'image_5' => 'images/drama15.jpg',
-        'noms' => [
-            'hebe_feng',
-            'guansen_zhang',
-            'wang_jun_hao',
-            'Li Ting Zhe',
+        'genre' => 'Novel ; Romance ; Web series',
+        'casting' => [
+            ['nom' => 'Hebe Feng', 'image' => 'images/image2.png'],
+            ['nom' => 'Guansen Zhang', 'image' => 'images/image3.png'],
+            ['nom' => 'Wang Jun Hao', 'image' => 'images/image4.png'],
+            ['nom' => 'Li Ting Zhe', 'image' => 'images/drama15.jpg'],
         ],
-        
-        
-        'sous_titre2' => 'Indulgence (2024) Remorque:',
-
-        'youtube_link' => 'https://www.youtube.com/watch?v=L_b4i_7WeS0&ab_channel=YOUKUEnglish-GetAPPnow',
-        'video' => 'https://www.youtube.com/embed/L_b4i_7WeS0?si=tIc9FQPDfdGFY0FH',
-
-    ];
-    //article 2//
-
-
-
-    $movie2 = [
+        'video_titre' => 'Indulgence (2024) trailer',
+        'youtube_link' => 'https://www.youtube.com/watch?v=L_b4i_7WeS0',
+        'video' => 'https://www.youtube-nocookie.com/embed/L_b4i_7WeS0',
+    ],
+    [
         'id' => 2,
-        'titre' => 'Badlands hunters (2024)',
-        'sous_titre' => 'Concrete Utopia',
-        'image_1' => 'images/image5.png',
-        'sous_titre_1' => 'description',
-        'resume' => 'An earthquake transformed Seoul into an apocalyptic desert. Survivors have to face not only the threats of nature, but also between them, because this world of non-law is governed only by power. Among them, Nam San is a wasteland hunter. He works with Choi Ji Wan. ',
-        'durer' => '1h. 47 minutes',
-        'episodes_total' => '1',
-        'diffuser_le' => 'January 26, 2024',
+        'titre' => 'Badland Hunters',
+        'sous_titre' => 'Spin-off of Concrete Utopia',
+        'poster' => 'images/image5.png',
+        'resume' => [
+            'An earthquake has turned Seoul into an apocalyptic wasteland. Survivors must face not only the threats of nature but also each other, because this lawless world is ruled by power alone.',
+            'Among them, Nam San is a wasteland hunter. He works with Choi Ji Wan.',
+        ],
+        'episodes_total' => '1 (film)',
+        'durer' => '1 h 47',
+        'diffuser_le' => 'Released on January 26, 2024',
         'reseau_origine' => 'Netflix',
-        'pays' => 'Korean',
-        'statue' => 'finished',
+        'pays' => 'South Korea',
+        'statue' => 'Completed',
         'sortie' => '2024',
-        'genre' => ' Action, Drama',
-        'image_2' => 'images/image5.1.png',
-        'image_3' => 'images/image5.2.png',
-        'image_4' => 'images/image5.4.png',
-        'image_5' => 'images/image5.3.png',
-        'image_6' => 'images/image5.5.png',
-        'noms' => [
-            'Ma dong seok',
-            'Roh jeong eui',
-            'Jun',
-            'Lee han joo',
-            'Lee hee joon',
+        'genre' => 'Action ; Drama',
+        'casting' => [
+            ['nom' => 'Ma Dong-seok', 'image' => 'images/image5.1.png'],
+            ['nom' => 'Roh Jeong-eui', 'image' => 'images/image5.2.png'],
+            ['nom' => 'Jun', 'image' => 'images/image5.4.png'],
+            ['nom' => 'Lee Han-joo', 'image' => 'images/image5.3.png'],
+            ['nom' => 'Lee Hee-joon', 'image' => 'images/image5.5.png'],
         ],
-        'sous_titre2' => 'Badland Hunters trailer (2024)',
-
-        'youtube_link' => 'https://www.youtube.com/watch?v=HlUkRYLdlQg&ab_channel=ONEMedia',
-        'video' => 'https://www.youtube.com/embed/HlUkRYLdlQg?si=Teop9tlmjIhKU09w',
-    ];
-
-    //article 3//
-
-
-    $kdrama2 = [
+        'video_titre' => 'Badland Hunters (2024) trailer',
+        'youtube_link' => 'https://www.youtube.com/watch?v=HlUkRYLdlQg',
+        'video' => 'https://www.youtube-nocookie.com/embed/HlUkRYLdlQg',
+    ],
+    [
         'id' => 3,
-        'titre' => 'Kingmaker: the change of fate',
-        'sous_titre' => 'Wind and cloud and rain',
-        'image_1' => 'images/image6.png',
-        'sous_titre_1' => 'description',
-        'resume' => 'Taking up at the end of the Joseon period, the dramatic series follows the facial reader (physiognomist) Choi Chun Juong while he tries to build an ideal nation. 
-        Choi Chun Juong is the biggest guess and physiognomist of Joseon. He is a hero of turbulent times and he is the king of the people of Joseon. Choi Chun Juong has the great ambition to build a new nation after having reversed Joseon, who was ruined by men in power. 
-        With a good appearance, Choi Chun Jong is a sophisticated man who excels in the arts, especially martial arts, games of chance, song and dance. It is also a romantic who makes every effort for the woman he loves. With a sense of words and a brilliant spirit for politics, he will create a miracle, making Yi ha eung the most powerful man of Joseon, of the son of Yi Ha Eung, Lee Jae Hwang, a king and Min Ja Young, a girl from the streets, in the Empress of Joseon.',
-        'épisodes_total '=>' 13 ',    
-        'durer' => '1h',
-        'reseau_origine' => 'Youku',
-        'pays' => 'Korean',
-        'statue' => 'Finished',
+        'titre' => 'Kingmaker: The Change of Destiny',
+        'sous_titre' => 'Wind, Clouds and Rain',
+        'poster' => 'images/image6.png',
+        'resume' => [
+            'Set at the end of the Joseon period, the series follows the face reader Choi Chun Joong as he tries to build an ideal nation. Regarded as the greatest fortune teller and physiognomist of Joseon, he is a hero of turbulent times with the great ambition of building a new country after overthrowing Joseon, ruined by those in power.',
+            'Handsome and refined, Choi Chun Joong excels in the arts, including martial arts, gambling, singing and dancing. He is also a romantic who does everything for the woman he loves. With a way with words and a brilliant political mind, he will make Yi Ha Eung the most powerful man in Joseon, Yi Ha Eung’s son Lee Jae Hwang a king, and Min Ja Young, a girl from the streets, the empress of Joseon.',
+            'Adapted from the novel “Baramgwa Gooreumgwa Bi” by Lee Byung Joo (serialized from 1977 to 1987 in The Chosun Ilbo), the story blends fictional characters with real historical figures.',
+        ],
+        'episodes_total' => '21',
+        'durer' => '1 h',
+        'diffuser_le' => 'From May 17, 2020',
+        'reseau_origine' => 'TV Chosun',
+        'pays' => 'South Korea',
+        'statue' => 'Completed',
         'sortie' => '2020',
-        'genre' => ' Drama ; Fantasy ; Historical; Romance; Supernatural',
-        'image_2' => 'images/image6.1.png',
-        'image_3' => 'images/image6.2.png',
-        'image_4' => 'images/image6.3.png',
-        'image_5' => 'images/image6.4.png',
-        'noms' => [
-            'Jo bok rae',
-            'Noh hyeong wook',
-            'Park jeong yeon',
-            'Kang tae woo',
-
-
+        'genre' => 'Drama ; Fantasy ; Historical ; Romance ; Supernatural',
+        'casting' => [
+            ['nom' => 'Jo Bok-rae', 'image' => 'images/image6.1.png'],
+            ['nom' => 'Noh Hyeong-wook', 'image' => 'images/image6.2.png'],
+            ['nom' => 'Park Jeong-yeon', 'image' => 'images/image6.3.png'],
+            ['nom' => 'Kang Tae-woo', 'image' => 'images/image6.4.png'],
         ],
-        'sous_titre2' => 'Kingmaker trailer: the change of fate:',
-
-        'youtube_link' => 'https://www.youtube.com/watch?v=1uXLgYvG-OY&ab_channel=MoviesWorld',
-        'video' => 'https://www.youtube.com/embed/1uXLgYvG-OY?si=Gis3fQkjoO0Ms_0d'
-    ];
-
-
-
-
-
-    //article 4//
-
-
-    $kdrama3 = [
+        'video_titre' => 'Kingmaker: The Change of Destiny trailer',
+        'youtube_link' => 'https://www.youtube.com/watch?v=1uXLgYvG-OY',
+        'video' => 'https://www.youtube-nocookie.com/embed/1uXLgYvG-OY',
+    ],
+    [
         'id' => 4,
-        'titre' => 'stealth walker (2021) ',
+        'titre' => 'Stealth Walker',
         'sous_titre' => 'Mei Gui Xing Zhe',
-        'image_1' => 'images/image3.0.png',
-        'sous_titre_1' => 'description',
-        'resume' => 'About a group of young police officers who dismantle drug organizations.',
+        'poster' => 'images/image3.0.png',
+        'resume' => [
+            'The story of a group of young police officers who take down drug trafficking organizations.',
+        ],
         'episodes_total' => '10',
-        'durer' => '50 minutes',
+        'durer' => '50 min',
+        'diffuser_le' => 'August 11 to 27, 2021',
         'reseau_origine' => 'Youku',
-        'pays' => 'Chinese',
-        'statue' => 'finished',
-    'sortie' => '2021',
-        'diffuser_le' => 'From 08/11/2021 to 08/27/2021',
-        'genre' => 'Police officer ; Friendship ; Investigation ; Romance; Suspense ; Web series',
-        'image_2' => 'images/image3.1.png',
-        'image_3' => 'images/image3.2.png',
-        'image_4' => 'images/image33.png',
-        'image_5' => 'images/image3.4.png',
-        'noms' => [
-            'Peng ling',
-            'Zheng ye cheng',
-            'Kim ji woong',
-            'Li zi feng',
-
-
-        ],
-        'sous_titre2' => 'Trailer of Stealth Walker (2021) :',
-
-        'youtube_link' => 'https://www.youtube.com/watch?v=GQhU9SVkQdk&ab_channel=Shiny249',
-        'video' => 'https://www.youtube.com/embed/GQhU9SVkQdk?si=EZxN-Q_yPkXIFa_Q'
-
-    ];
-
-
-
-    //article 5//
-
-
-
-    $kdrama4 = [
-        'id' => 5,
-        'titre' => 'The sweet blood',
-        'sous_titre' => 'Dalmarhan keu nom',
-        'image_1' => 'images/image2.10.png',
-        'sous_titre_1' => 'description',
-        'resume' => 'Born from a human mother and a vampire father, Yeon SEO is a half-vampire of 118 years who wants nothing other than living an ordinary human life. With natural beauty and many vampire capacities, Yeon SEO could be all she wanted, but she chose to blend into those who seem closest to her age. Consequently, Yeon SEO is now faced with one of the most difficult challenges in life: obtaining his graduation in high school. 
-        Fighting against his most vampiric impulses, Yeon SEO does his best to blend into the school; A task which, for the most part, was quite easy. But when the sweet blood of his classmate, Song Meo Roo, attracts the attention of vampires and werewolves, things get complicated a little. Desperately trying to ignore the call of the sirens of the blood of Meo Roo, Yeon SEO takes on her to protect her classmate from those who hunt her. 
-        While Yeon SEO and Meo Roo run to save their lives, blood in his veins calls him. Torn between family duty and desires of his own heart, a war raged within Yeon SEO. Will she manage to kiss her humanity and resist the temptation of the sweet blood of this boy or his vampire side will he end up getting victorious? ',
-        'episodes_total' => '8',
-        'durer' => '12 minutes',
-        'reseau_origine' => 'Youku',
-        'pays' => 'Chinese',
-        'statue' => 'Finished',
+        'pays' => 'China',
+        'statue' => 'Completed',
         'sortie' => '2021',
-        'diffuser_le' => 'du 24/03/2021 au 12/05/2021',
-        'genre' => 'Police officer ; Friendship ; Investigation ; Romance; Suspense ; Web series',
-        'image_2' => 'images/image2.1.png',
-        'image_3' => 'images/image2.2.png',
-        'image_4' => 'images/image33.png',
-        'image_5' => 'images/image2.4.png',
-        'noms' => [
-            'Kim eo jin',
-            'Song chae yoon',
-            'Jo eun ho',
-            'Kim tae hwan',
-
-
+        'genre' => 'Crime ; Friendship ; Investigation ; Romance ; Suspense ; Web series',
+        'casting' => [
+            ['nom' => 'Peng Ling', 'image' => 'images/image3.1.png'],
+            ['nom' => 'Zheng Ye Cheng', 'image' => 'images/image3.2.png'],
+            ['nom' => 'Kim Ji-woong', 'image' => 'images/image33.png'],
+            ['nom' => 'Li Zi Feng', 'image' => 'images/image3.4.png'],
         ],
-        'sous_titre2' => 'Kingmaker trailer: the change of fate :',
-
-        'youtube_link' => 'https://www.youtube.com/watch?v=qB6lC96tXUc&ab_channel=VikiGlobalTV',
-        'video' => 'https://www.youtube.com/embed/qB6lC96tXUc?si=wu-QlWj6oCChEPh4'
-    ];
-
-
-    $categorie3 = [$kdrama1,$movie2,$kdrama2,$kdrama3,$kdrama4];
-    $lang = 'en';
-
-?>
+        'video_titre' => 'Stealth Walker (2021) trailer',
+        'youtube_link' => 'https://www.youtube.com/watch?v=GQhU9SVkQdk',
+        'video' => 'https://www.youtube-nocookie.com/embed/GQhU9SVkQdk',
+    ],
+    [
+        'id' => 5,
+        'titre' => 'The Sweet Blood',
+        'sous_titre' => 'Daldarhan Keu Nom',
+        'poster' => 'images/image2.10.png',
+        'resume' => [
+            'Born to a human mother and a vampire father, Yeon Seo is a 118-year-old half-vampire who wants nothing more than an ordinary human life. She has chosen to blend in with people her apparent age and now faces one of life’s toughest challenges: graduating from high school.',
+            'Fighting her vampire urges, Yeon Seo does her best to go unnoticed at school, until the sweet blood of her classmate Song Meo Roo attracts vampires and werewolves. Trying to ignore its call, she takes it upon herself to protect him from those who hunt him.',
+            'Torn between family duty and the desires of her heart, will Yeon Seo embrace her humanity and resist temptation, or will her vampire side win in the end?',
+        ],
+        'episodes_total' => '15',
+        'diffuser_le' => 'From April 7, 2021 (Wednesdays and Saturdays)',
+        'reseau_origine' => 'YouTube (B-PLAY)',
+        'pays' => 'South Korea',
+        'statue' => 'Completed',
+        'sortie' => '2021',
+        'genre' => 'Fantasy ; Romance ; Vampires ; Web series',
+        'casting' => [
+            ['nom' => 'Kim Eo-jin', 'image' => 'images/image2.1.png'],
+            ['nom' => 'Song Chae-yoon', 'image' => 'images/image2.2.png'],
+            ['nom' => 'Jo Eun-ho', 'image' => 'images/image2.3-1998.png'],
+            ['nom' => 'Kim Tae-hwan', 'image' => 'images/image2.4.png'],
+        ],
+        'video_titre' => 'The Sweet Blood (2021) trailer',
+        'youtube_link' => 'https://www.youtube.com/watch?v=qB6lC96tXUc',
+        'video' => 'https://www.youtube-nocookie.com/embed/qB6lC96tXUc',
+    ],
+];

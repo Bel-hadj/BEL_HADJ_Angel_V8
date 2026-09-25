@@ -1,83 +1,74 @@
 <?php
 
-$kpop1 = [
-    'id' => 1,
-    'titre' => 'BTS',
-    'sous_titre' => 'BTS: the crazy success of the international K-Pop groupoup',
-    'logos_reseau' => [
-        'instagram',
-        'facebook',
-        'twitter',
+// K-Pop entries (English version).
+// 'sous_titre' is the news article headline, 'texte' a list of paragraphs.
+
+$categorie2 = [
+    [
+        'id' => 1,
+        'titre' => 'BTS',
+        'sous_titre' => 'The huge success of the K-Pop group in 5 figures',
+        'image' => 'images/bts1.jpg',
+        'agence' => 'Big Hit Music (HYBE)',
+        'debut' => '2013',
+        'membres' => '7',
+        'texte' => [
+            'The seven Koreans of “Bangtan Boys”, or BTS, have been received at the White House, fill stadiums and rally a huge community nicknamed “Army”. The group celebrated its tenth anniversary, and BTS has placed 6 songs at number 1 on the Billboard chart for several weeks. Ten songs have even reached the top 10.',
+            '“Dynamite” and “Savage Love” stayed 30 weeks at the top of the American music-industry magazine’s ranking. BTS is the only K-Pop group to have climbed that high in this famous chart in the United States.',
+            'It is hard to count the exact number of fans, but on social media the figures speak for themselves: 43 million followers on Twitter and 73.5 million on Instagram. The group sold 32.8 million albums between its debut and November 2021, according to the Korean news agency Yonhap.',
+        ],
     ],
-    'images' => 'images/bts1.jpg',
-    'texte1' => 'The seven Koreans of “Bangtan Boys” or BTS have been received in the White House, fill the stadiums and federate an important community, nicknamed “Army”.The group celebrates its ten years on Tuesday… and BTS placed 6 number 1 titles at the Billboard for several weeks.10 songs even hoisted in the top 10 Billboard.
-    "Dynamite" and "Savage Love" stayed 30 weeks on the front page of the American magazine in the record industry.BTS is the only K-Pop group to be as high in the famous ranking in the United States.Difficult to count the exact number of fans of the K-POP group.But on social networks, the figures speak of themselves
-    : BTS brings together 43 million followers on Twitter and 73.5 million on Instagram! \'The group sold 32.8 million albums between its creation and November 2021, according to the Korean news agency Yonhap',
-];
-
-$kpop2 = [
-    'id' => 2,
-    'titre' => 'BlackPink',
-    'sous_titre' => '"The White Lotus": Lisa Manobal, the member of the BlackPink group, joins the cast of season 3',
-    'logos_reseau' => [
-        'instagram',
-        'twitter',
-        'youtube',
+    [
+        'id' => 2,
+        'titre' => 'BLACKPINK',
+        'sous_titre' => '“The White Lotus”: Lisa joins the season 3 cast',
+        'image' => 'images/blackpink1.webp',
+        'agence' => 'YG Entertainment',
+        'debut' => '2016',
+        'membres' => '4',
+        'texte' => [
+            'A first. Thai-born singer and dancer Lisa Manobal, of the South Korean group BLACKPINK, will appear in season 3 of “The White Lotus”, the American site Variety revealed exclusively. The 26-year-old will take her first steps in front of the camera in a role that has not been specified. She is the second member of the group to join the cast of a series from the American channel HBO, after Jennie in “The Idol” in June 2023.',
+            'The third chapter of “The White Lotus” was due to start filming in February in Thailand, in Koh Samui, Phuket and Bangkok. The main plot has not been revealed, but the story will once again take place in a luxury hotel. Lisa joins an already rich cast including Michelle Monaghan, Leslie Bibb, Dom Hetrakul, Jason Isaacs and Patrick Schwarzenegger.',
+        ],
     ],
-    'images' => 'images/blackpink1.webp',
-    'texte1' => 'A great first.The singer and dancer of Thai origin Lisa Manobal, of the South Korean group Blackpink, will be in the credits of season 3 of "The White Lotus", reveals the American site variety exclusively.The 26 -year -old will take his first steps in front of the camera, in a role that has not been specified at the moment.She is the second member of the BlackPink group joined the cast of a series of the American channel HBO, after Kim Jennie in "The Idol", in June 2023 (where she had been credited under the name of Jennie Ruby Jane).
-    The third chapter of "The White Lotus" was to start shooting this February in Thailand, in Koh Samui, Phuket, and Bangkok.If the main intrigue has not been revealed, we know that the story will take place again in a luxury hotel.Lisa Manobal joins a cast already rich in leading actors, notably Michelle Monaghan, Leslie Bibb, Dom Hetrakul, Jason Isaacs, or Patrick Schwarzenegger. ',
-];
-
-$kpop3 = [
-    'id' => 3,
-    'titre' => 'Stray Kids',
-    'sous_titre' => 'Stray Kids will perform in Milan and London',
-    'logos_reseau' => [
-        'instagram',
-        'twitter',
-        'vlive',
+    [
+        'id' => 3,
+        'titre' => 'Stray Kids',
+        'sous_titre' => 'Stray Kids to perform in Milan and London',
+        'image' => 'images/straykids1.webp',
+        'agence' => 'JYP Entertainment',
+        'debut' => '2018',
+        'membres' => '8',
+        'texte' => [
+            'Stray Kids has been chosen to headline the Italian festival I-Days in Milan on July 12, and the British festival British Summer Time (BST) Hyde Park in London on July 14.',
+            'At I-Days 2024, the band Metallica, American rapper Doja Cat and American singer-songwriter Lana Del Rey will also be on the bill. For BST Hyde Park, a K-Pop group taking part will be a first since the festival launched in 2013.',
+        ],
     ],
-    'images' => 'images/straykids1.webp',
-    'texte1' => 'Stray Kids was chosen to have headlined the Italian I-Days festival in Milan, which will take place on July 12, and the British Festival British Summer Time (BST) Hyde Park in London, July 14!
-    At the I-Days 2024 festival, the legendary Metallica group, the American rapper Doja Cat and the American singer-songwriter Lana Del Rey will also be present.For the BST Hyde Park festival, the participation of a K-POP group will be a first since its launch in 2013. More information to come.Do not miss anything, follow us by activating the notifications.',
-];
-
-$kpop4 = [
-    'id' => 4,
-    'titre' => 'TXT',
-    'sous_titre' => 'Yeonjun de Txt talks about the 4th generation of Kpop Idols',
-    'logos_reseau' => [
-        'instagram',
-        'twitter',
-        'weverse',
+    [
+        'id' => 4,
+        'titre' => 'TXT',
+        'sous_titre' => 'Yeonjun talks about the 4th generation of K-Pop idols',
+        'image' => 'images/txt1.webp',
+        'agence' => 'Big Hit Music (HYBE)',
+        'debut' => '2019',
+        'membres' => '5',
+        'texte' => [
+            'TXT’s Yeonjun shares his hopes for 4th-generation boy groups, as girl groups such as NewJeans and IVE dominate the music charts.',
+            'He appeared as a guest on a new episode of “Bam House”, hosted by GOT7’s Bambam. As the conversation went on, the two artists discussed the current situation of 4th-generation idols.',
+        ],
     ],
-    'images' => 'images/txt1.webp',
-    'texte1' => 'Yeonjun de TXt shares what he hopes for groups of boys of the 4th generation while groups of girls like Newjeans, IVE and more dominate music rankings!
-    The member of TXT, Yeonjun, appeared in the new episode of "Bam House" led by Bambam de Got7 as a guest.When they discussed various subjects, the two mentioned the current situation of the 4th generation idols. ',
-];
-
-$kpop5 = [
-    'id' => 5,
-    'titre' => 'Twice',
-    'sous_titre' => 'Twice will become the first K-Pop girlgroup to perform at Nissan Stadium in front of 150,000 people ',
-    'logos_reseau' => [
-        'instagram',
-        'twitter',
-        'vlive',
+    [
+        'id' => 5,
+        'titre' => 'TWICE',
+        'sous_titre' => 'First K-Pop girl group at Nissan Stadium, in front of 150,000 people',
+        'image' => 'images/twice1.webp',
+        'agence' => 'JYP Entertainment',
+        'debut' => '2015',
+        'membres' => '9',
+        'texte' => [
+            'TWICE is about to give a concert of huge scale in Japan. On December 28, the JYP Entertainment girl group announced the dates of its Japanese stadium tour, taking place in summer 2024.',
+            'The group will perform at Yanmar Stadium in Osaka on July 13 and 14, and at Nissan Stadium in Yokohama on July 27 and 28. TWICE will become the first K-Pop girl group to play Nissan Stadium, Japan’s largest stadium with a concert capacity of 75,000. Only one K-Pop act has played there before: TVXQ.',
+            'With two consecutive shows, TWICE will perform in front of 150,000 people over two days.',
+        ],
     ],
-    'images' => 'images/twice1.webp',
-    'texte1' => 'Twice will give a huge concert in Japan!
-    This December 28, the Girlgroup of Jyp Entertainment announced the dates of its stadium tour in Japan which will take place during the summer of 2024.
-    The group will notably perfume at Yanmar Stadium in Osaka on July 13 and 14, as well as the Yokohama Nissan Stadium on July 27 and 28.
-    Twice will thus become the first K-Pop girlgroup to perform at Nissan Stadium, which is the largest stadium in Japan with a capacity for concerts of 75,000 seats.A single group of K-Pop has already performed there in the past, this is TVXQ.
-    With two successive performances, Twice will therefore perform there in front of 150,000 people in the space of two days. ',
 ];
-
-// Tableau de tous les groupes de K-pop
-$categorie2 = [$kpop1, $kpop2, $kpop3, $kpop4, $kpop5];
-$lang = 'en';
-
-
-
-?>
