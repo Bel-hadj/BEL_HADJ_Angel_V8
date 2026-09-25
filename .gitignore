@@ -1,0 +1,18 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs PHP locaux
+*.log
+error_log
+
+# Configuration locale contenant des identifiants (ex. base de données Alwaysdata)
+# Ne jamais versionner ce fichier : voir README.md > Déploiement
+.env
+.env.local
+config.local.php
