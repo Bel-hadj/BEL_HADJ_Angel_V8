@@ -1,0 +1,49 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<div class="conteneur_26">
+    {# modèle 1 #}
+    <aside class="sidebar_4">
+        <div class="liste_du_aside_1">
+            <p class="pi_6">Plan de la page :</p>
+            <div class="drapeau_2">
+
+                {% if lang == 'en' %}
+                <a href="kpop.php"><img  alt='drapeau' class="drapeau_4" src="images/drapeau_francais.jpg"></a>
+                {% else %}
+                <a href="kpop_en.php"><img alt="drapeau" class="drapeau_9" src="images/drapeau_anglais.jpg"></a>
+                {% endif %}
+
+            </div>
+            <ul class="liste_4">
+                {% for article in all_articles %}
+                <li><a href="#{{ article.id }}" class="article-link_56">{{ article.titre }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+    <div class="contenu_30">
+        <section class="main-section_9">
+            <h1 class="main-title_9">K-selection</h1>
+            {# modèle 1 #}
+            {% for article in all_articles %}
+            <article id="{{ article.id }}" class="article_8">
+                <!-- Autres éléments de l'article ici -->
+                <div class="kpop_image_8">
+                    <div class="image_gauche_3">
+                        <img src="{{ article.images }}" class="article-image_152">
+                    </div>
+                    <div class="partie_droite_5">
+                        <h2 class="article-title_12">{{ article.titre }}</h2>
+                        <h3 class="article-subtitle_11">{{ article.sous_titre }}</h3>
+                    </div>
+                </div>
+
+                <ul class="liste_de_description">
+                    <li><span>Résumer :</span>{{ article.texte1 }}</li>
+                    </ul>
+                {% endfor %}
+        </section>
+    </div>
+</div>
+{% endblock main %}

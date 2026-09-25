@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ titre }} | Asians Dreams</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/kdramas.css">
+	<link rel="stylesheet" href="css/mangas.css">
+	<link rel="stylesheet" href="css/contact.css">
+	<link rel="stylesheet" href="css/a_propos.css">
+	<link rel="stylesheet" href="css/kpop.css">
+
+	<script src="carousel.js"></script>
+</head>
+
+<body>
+	<header role="banner"> {#HEADER#}
+		<img class="banniere" src="images/image20.jpg" alt="My name">
+
+		<nav role="navigation" aria-label="Menu principal">
+		<ul class="menu">
+			<!-- Menu présent dans toutes les pages héritant (extends) de ce modèle j'ai changé tout -->
+			<li><a href="accueil.php">Accueil</a></li>
+			<li><a href="mangas.php">Mangas</a></li>
+			<li><a href="kpop.php">K-Selection</a></li>
+			<li><a href="kdrama.php">Kdramas</a></li>
+			<li><a href="a_propos.php">À propos</a></li>
+			<li><a href="contact.php">Contact</a></li>
+		</ul>
+		</nav>
+	</header>
+
+	<main>
+		{% block main %}
+		<div class="block-pere">
+
+			<h1 class="titre_principale">Asian K-Mangas</h1>
+
+
+			<section class="kdrama-section">
+				<h2>K-Dramas</h2>
+			</section>
+		</div>
+		<p>Les K-Dramas, abréviation de Korean Dramas, sont des séries télévisées sud-coréennes. Ils sont connus pour
+			leurs intrigues captivantes, leurs romances complexes et leurs performances d'acteurs de haute qualité.</p>
+		<p>Les K-Dramas sont populaires dans le monde entier et ont une base de fans dévouée qui apprécie la diversité
+			des genres, des comédies romantiques aux thrillers politiques.</p>
+		<p>Plongez-vous dans l'univers des K-Dramas et explorez une multitude de séries qui sauront vous divertir et
+			vous émouvoir.</p>
+
+		<section class="manga-section">
+			<h2>Mangas</h2>
+
+			<p>Les Mangas sont des bandes dessinées japonaises qui couvrent une vaste gamme de genres, des aventures
+				épiques aux récits fantastiques en passant par les tranches de vie et les romances.</p>
+			<p>Les Mangas sont appréciés pour leurs illustrations uniques, leurs histoires riches en émotions et leurs
+				personnages mémorables.</p>
+			<p>Plongez-vous dans l'univers des Mangas et découvrez des histoires passionnantes, des mondes imaginaires
+				fascinants et des aventures inoubliables.</p>
+		</section>
+
+		<div class="image_with_emoji">
+			<span class="emoji">😊🤣😂😘🥱</span>
+		</div>
+
+		{% endblock main %}
+	</main>
+	
+	<footer role="contentinfo"> {# FOOTER #}
+		{% block footer %}
+		<nav role="navigation">
+			<div class="footer-content">
+				<div class="footer">
+					<a href="accueil.php">Accueil</a>
+					<a href="kdrama.php">K-Dramas</a>
+					<a href="mangas.php">Mangas</a>
+					<a href="kpop.php">k-Selection</a>
+					<a href="contact.php">Contact</a>
+					<a href="https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#">Mention légales</a>
+				</div>
+				<div class="footer-name">
+					<p>© 2024 Bel Hadj Angel. Tous droits réservés.</p>
+				</div>
+			</div>
+		</nav>
+		{% endblock footer %}
+	</footer>
+</body>
+
+</html>

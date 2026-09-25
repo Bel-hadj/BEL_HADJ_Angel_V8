@@ -1,0 +1,214 @@
+/* Page de kdramas */
+
+.conteneur {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Styles pour la colonne de gauche */
+aside {
+    flex: 1;
+    margin-right: -80px;
+}
+
+.pi {
+    text-decoration: underline;
+    font-size: 15px;  
+}
+.liste_du_aside {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    height: 99.3%;
+    width: 200px;
+}
+
+.liste_du_aside p {
+    font-weight: bold;
+}
+
+.liste {
+    list-style: none;
+    padding: 0;
+}
+
+.liste li {
+    margin-bottom: 10px;
+}
+
+/* Styles pour la colonne de droite */
+.contenu {
+    flex: 2;
+}
+
+.partie_droite {
+    flex: 2; /* Le contenu de la partie droite prendra tout l'espace disponible */
+}
+
+.partie_droite h1 {
+    /* Propriétés de police */
+    font-family: "Raleway", sans-serif; 
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    /* Marge et rembourrage */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px; 
+    /* Effet d'ombre optionnel */
+    text-shadow: 0px 2px 3px #0000001a;
+    text-decoration: underline;
+}
+  
+.serie_1 {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.image_gauche {
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+}
+
+/* Styles pour agrandir l'image lors du survol */
+.image_gauche img {
+    border-radius: 10px;
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease; /* Transition fluide */
+    max-height: 100%; 
+    margin-bottom: 20px; 
+}
+
+.image_gauche img:hover {
+    transform: scale(1.1);
+}
+
+.partie_droite h2 {
+    margin-bottom: 5px;
+}
+
+.partie_droite h3 {
+    margin-bottom: 10px;
+}
+
+
+
+.partie_droite p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+.image-arrondie_1,
+.image-arrondie_2,
+.image-arrondie_3,
+.image-arrondie_4 {
+    border-radius: 10px;
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Styles pour encadrer les noms sous les images */
+.noms {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.noms img {
+    margin: 10px; 
+}
+
+.noms ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.noms li {
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    margin: 5px; 
+    font-size: 15px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: inline-block; /* Aligne le texte en ligne */
+}
+
+
+
+.noms img {
+    margin-right: 10px; /* Marge à droite pour l'espace entre l'image et le texte */
+}
+
+
+/* Styles pour la description */
+
+.liste_de_description li {
+    margin-bottom: 10px; 
+}
+
+.liste_de_description li span {
+    font-weight: bold; 
+}
+
+/* Styles pour les vidéos */
+iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 15px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.liste_de_description ul li::before {
+    content: "\2022"; 
+    margin-right: 5px; 
+}
+
+/* Styles pour les mots en gras avant les double-points */
+.partie_droite ul li span {
+    font-weight: bold;
+    font-size: 15px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+}
+
+/* Ajoute de l'espace entre les articles */
+article {
+    margin-bottom: 20px;
+}
+
+/* Pour éviter d'ajouter une marge inférieure au dernier article */
+article:last-child {
+    margin-bottom: 0; 
+}
+
+
+/* style de titre */
+
+.contenu 
+h2,
+h3{
+    font-size: 20px;
+    color: #0c0a0a;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+.title_1 {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}

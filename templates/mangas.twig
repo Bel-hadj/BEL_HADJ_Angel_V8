@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<div class="place_section">{# modèle 2 #}
+    <aside class="aside">
+        <div class="aside_content">
+            <p class="p">Plan de la page :</p>
+
+            {% if lang == 'en' %}
+            <a href="mangas.php"><img class="drapeau" src="images/drapeau_francais.jpg"></a>
+            {% else %}
+            <a href="mangas_en.php"><img class="drapeau" src="images/drapeau_anglais.jpg"></a>
+            {% endif %}
+            <ul class="aside_list">
+                {% for article in all_articles %}
+                <li><a href="#{{ article.id }}">{{ article.titre }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+
+    <div class="section_mangas">
+
+        <section>
+            <h1 class="mangas_title"> Top Mangas Shonen </h1>
+            {# modèle 1 #}
+            {% for mangas in all_articles %}
+
+            <h2 id="{{ mangas.id }}">{{ mangas.titre }}</h2> {# Ajout de l'ID de l'article ici #}
+            {# modèle du tome 1#}
+            <article class="mangas_article">
+                <img src="{{ mangas.image }}" class="mangas_image">
+                <div class="mangas_info">
+                    <p><span>Résumé :</span> {{ mangas.texte }}</p>
+                    <p><span>Description :</span> {{ mangas.description }}</p>
+                    <p><span>Genre :</span> {{ mangas.genre }}</p>
+                    <p><span>Date de sortie :</span> {{ mangas.date }}</p>
+                    <p><span>Nombre de tome :</span> {{ mangas.nombre_de_tomes }}</p>
+                    <p><span>Nombre de pages :</span> {{ mangas.nombre_de_pages }}</p>
+                    <p><span>Note :</span> {{ mangas.note }}</p>
+                    <p><span>Prix :</span> {{ mangas.prix }}</p>
+                </div>
+            </article>
+
+            {% endfor %}
+        </section>
+    </div>
+
+</div>
+
+{% endblock main %}

@@ -1,0 +1,117 @@
+/*style de la page mangas*/
+
+.place_section {
+    display: flex;
+}
+
+
+.aside_content {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    height: 99%;
+    width: 160px;
+}
+
+
+
+
+.aside {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    font-size: 15px;     
+}
+.p {
+    color: #333; /* Couleur du texte */
+    font-size: 18px; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    text-decoration: underline; /* Souligner le texte */
+}
+
+.aside_list li {
+    margin-bottom: 10px; /* Ajoute un espace de 10px en bas de chaque élément li */
+}
+
+
+/*style de la page mangas body*/
+.section_mangas {
+    flex: 1;
+}
+
+.section_mangas img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+.section_mangas img {
+    animation: pulse 2s infinite alternate;
+}
+
+.section_mangas img {
+    border-radius: 10px;
+}
+
+
+.mangas_title {
+    text-decoration: underline;
+    text-align: center;
+    border: 2px solid black;
+    padding: 5px; 
+    margin: 10px;
+}
+
+.mangas_info span {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.mangas_info p {
+    transition: transform 0.3s ease-in-out;
+}
+
+.mangas_info p:hover {
+    transform: translateX(5px);
+}
+
+
+.place_section {
+    justify-content: center;
+}
+
+.place_section label {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.place_section legend {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-weight: bold;
+}
+
+.place_section input {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

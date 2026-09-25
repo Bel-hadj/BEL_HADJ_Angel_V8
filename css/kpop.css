@@ -1,0 +1,146 @@
+/* Styles généraux */
+
+.conteneur_26 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar_4 {
+    flex: 0 0 25%;
+}
+
+.contenu_30 {
+    flex: 0 0 75%;
+}
+
+.liste_du_aside_1 {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    height: 99.3%;
+    width: 200px;
+}
+
+
+.liste_4 {
+    list-style: none;
+    padding: 0;
+    text-decoration: underline;
+    padding-bottom: 1280px;
+}
+
+.liste_4 {
+    list-style: none;
+}
+
+.liste_4 li {
+    margin-bottom: 10px;
+}
+
+.article-link_56 {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.article-link_56:hover {
+    color: #007bff; /* Changement de couleur au survol */
+}
+
+
+.article-link_56 {
+    text-decoration: none;
+}
+
+/* Styles spécifiques */
+.pi_6 {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+
+.drapeau_2 {
+    margin-bottom: 20px;
+}
+
+.drapeau_4, .drapeau_9 {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    margin-right: 5px;
+}    
+
+
+.main-section_9 {
+    margin-left: 20px;
+}
+
+.main-title_9 {
+    font-size: 32px;
+    text-align: center;
+    border: solid black;
+}
+
+@keyframes bougerTitre {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.article_8 {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.kpop_image_8 {
+    display: flex;
+    align-items: center;
+}
+
+.image_gauche_3 {
+    margin-right: 20px;
+    animation: bougerImage 2s ease infinite alternate;
+}
+
+@keyframes bougerImage {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+.article-image_152 {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.partie_droite_5 {
+    flex: 1;
+}
+
+.article-title_12 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.article-subtitle_11 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #110303;
+}
+

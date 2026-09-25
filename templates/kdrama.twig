@@ -1,0 +1,72 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<div class="conteneur">
+    {# modèle 1 #}
+    <aside>
+        <div class="liste_du_aside">
+            <p class="pi">Plan de la page :</p>
+
+            {% if lang == 'en' %}
+            <a href="kdrama.php"><img class="drapeau" src="images/drapeau_francais.jpg"></a>
+            {% else %}
+            <a href="kdrama_en.php"><img class="drapeau" src="images/drapeau_anglais.jpg"></a>
+            {% endif %}
+            <ul class="liste">
+                {% for article in all_articles %}
+                <li><a href="#{{ article.id }}">{{ article.titre }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+    <div class="contenu">
+        <section>
+            <h1 class="title_1"> Asian Dreams </h1>
+            {# modèle 1 #}
+            {% for article in all_articles %}
+            <article id="{{ article.id }}">
+                <!-- Autres éléments de l'article ici -->
+                <div class="serie_1">
+                    <div class="image_gauche">
+                            <img src="{{ article.image_1 }}">
+                    
+                    </div>
+                    <div class="partie_droite">
+                        <h2>{{ article.titre }}</h2>
+                        <h3>{{ article.sous_titre }}</h3>
+                        <h4>{{ article.sous_titre_2 }}</h4>
+                        <p>Description :</p>
+                        <ul class="liste_de_description">
+                            <li><span>Episodes :</span>{{ article.episodes_total }}</li>
+                            <li><span>Résumer :</span>{{ article.resume }}</li>
+                            <li><span>Durée :</span>{{ article.durer }}</li>
+                            <li><span>Diffusé le :</span>{{ article.diffuser_le }}</li>
+                            <li><span>Réseau d'origine :</span>{{ article.reseau_origine }}</li>
+                            <li><span>Pays :</span>{{ article.pays }}</li>
+                            <li><span>Statut :</span>{{ article.statue }}</li>
+                            <li><span>Sortie :</span>{{ article.sortie }}</li>
+                            <li><span>Genre :</span>{{ article.genre }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="noms">
+                    <img src="{{ article.image_2 }}" class="image-arrondie_1" alt="Image arrondie 1">
+                    <img src="{{ article.image_3 }}" class="image-arrondie_2" alt="Image arrondie 2">
+                    <img src="{{ article.image_4 }}" class="image-arrondie_3" alt="Image arrondie 3">
+                    <img src="{{ article.image_5 }}" class="image-arrondie_4" alt="Image arrondie 4">
+
+                    <ul>
+                        {% for element in article.noms %}
+                        <li>{{ element }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <iframe width="560" height="315" src="{{ article.video }}" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </article>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+{% endblock main %}

@@ -1,0 +1,59 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+    <section>
+        <h2>Contact</h2>
+        <form method="post" action="reception.php">
+            <fieldset>
+                <legend><b>A remplir :</b></legend>
+                <div>
+                    <label for="nb1">NOM et prénom :</label>
+                    <input type="text" name="nb1" />
+                </div>
+                <div>
+                    <label for="nb2">Adresse mail :</label>
+                    <input type="text" name="nb2" />
+                </div>
+                <div >
+                    <label for="nb3">Votre message :</label>
+                    <input class="messg" type="text" name="nb3" />
+                </div>
+                <div class="valid">
+                    <input type="submit" name="valider" value="OK" />
+                </div>
+            </fieldset>
+        </form>
+    </section>
+
+    <section id="carousel">
+        <h1 class="h1">K-Dramas ou Mangas : quelle est votre source d'inspiration ?</h1>
+        <div class="carousel">
+            <div class="slide">
+                <img src="images/kdrama5.png" alt="Kdrama 1">
+            </div>
+            <div class="slide">
+                <img src="images/mangas32.jpg" alt="Manga 1">
+            </div>
+            <div class="slide">
+                <img src="images/kdrama13.webp" alt="Kdrama 2">
+            </div>
+            <div class="slide">
+                <img src="images/mangas56.jpg" alt="Manga 2">
+            </div>
+            <div class="slide">
+                <img src="images/kdrama18.jpg" alt="kdrama 3">
+            </div>
+            <div class="slide">
+                <img src="images/kdrama26.jpg" alt="kdrama 4">
+            </div>
+            <div class="slide">
+                <img src="images/mangas60.jpg" alt="Manga 3">
+            </div>
+            <div class="slide">
+                <img src="images/mangas61.webp" alt="Manga 4">
+            </div>
+        </div>
+    </section>
+    
+{% endblock main %}

@@ -1,0 +1,203 @@
+/*Général*/
+
+
+/*Pour le fond (images changeante) du site */
+
+body {
+	background-image: url("../images/mangas1.jpg");
+	animation: changeBackground 400s linear infinite;
+  }
+  
+  @keyframes changeBackground {
+	0%, 100% {
+	  background-image: url("../images/fondimage3.jpg");
+	}
+	25% {
+	  background-image: url("../images/fondimage2.avif");
+	}
+	50% {
+	  background-image: url("../images/fondimage4.jpg");
+	}
+	75% {
+	  background-image: url("../images/image_de_fond.jpg");
+	}
+}
+  
+/*HEADER*/
+
+.titre_principale {
+	text-decoration: underline;
+	text-align: center;
+}
+
+
+
+
+header {
+	position: relative;
+}
+
+
+/*classe banniere*/
+
+.banniere {
+	width: 100%;
+	display: block;
+}
+
+
+/*classe header avec classe menu*/
+
+.menu {
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    /* Ajustement pour centrer horizontalement */
+    transform: translateX(-50%);
+    background-color: #a48a52cc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #b2242433;
+    text-align: center;
+    width: fit-content;
+    font-weight: bold;
+	justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap; 
+	display: flex;
+
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 10px; /* Espace entre chaque élément */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #0c0404; /* Couleur du texte des liens */
+    padding: 10px 20px; /* Espace à l'intérieur des liens */
+}
+
+.menu li a:hover {
+    background-color: #1b0707; /* Couleur de fond au survol */
+    color: #a48a52cc; /* Couleur du texte au survol */
+    border-radius: 3px; /* Effet de bord arrondi au survol */
+}
+
+
+
+
+/*HEADER*/
+
+header,
+
+
+/*MAIN*/
+
+main,
+
+
+/*FOOTER*/
+
+footer {
+	background-color: rgb(167, 55, 55);
+	padding: 20px;
+	max-width: 1000px;
+	margin: 10px auto;
+}
+
+.footer-content {
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1200px;
+	/* Largeur maximale du contenu */
+	background-color: #333;
+	/* Couleur de fond du footer */
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+
+.footer a {
+	color: #d7c4c4;
+	/* Couleur des liens */
+	margin-right: 50px;
+	/* Espacement entre les liens */
+	text-align: center;
+	text-decoration: none;
+}
+
+.footer-name {
+	text-align: center;
+	/* Centrage du texte */
+	padding: 10px;
+	/* Espacement intérieur */
+}
+
+
+
+div.deux-colonnes {
+	display: flex;
+	flex-flow: row;
+}
+
+div.bleu {
+	min-width: 400px;
+	background-color: lightblue;
+	padding: 10px;
+	margin: 10px;
+}
+
+div.rouge {
+	min-width: 400px;
+	background-color: lightcoral;
+	padding: 10px;
+	margin: 10px;
+}
+
+
+
+.block-fils {
+	background-color: lightgreen;
+	border: 2px dashed green;
+	padding: 20px;
+}
+
+.block-petit-fils {
+	border: 2px solid blue;
+	padding: 20px;
+}
+
+/* Style pour aligner les emojis à côté des images */
+.image_with_emoji {
+	display: flex;
+	align-items: center;
+	/* Alignement vertical des éléments */
+}
+
+.image_with_emoji img {
+	margin-right: 10px;
+	/* Espacement entre l'image et l'emoji */
+}
+
+.image_with_emoji .emoji {
+	font-size: 24px;
+	/* Taille de police de l'emoji */
+}
+
+.block-pere h1, h2, h3 {
+	font-family: 'Arial', sans-serif;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.block-pere {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 15px;
+}
+  
+.drapeau {
+    max-width: 50px; /* ajustation la taille maximale selon vos préférences */
+    max-height: 50px; /* ajustation la taille maximale selon vos préférences */
+    vertical-align: middle;
+    margin-right: 5px; /* espace entre l'image et le texte */
+}
