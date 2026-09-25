@@ -1,8 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.carousel');
     const slides = document.querySelectorAll('.slide');
 
+    if (slides.length === 0) {
+        return; // Pas de carrousel sur cette page
+    }
+
     let currentIndex = 0;
+    slides.forEach((slide, index) => {
+        slide.style.display = index === 0 ? 'block' : 'none';
+    });
 
     function nextSlide() {
         slides[currentIndex].style.display = 'none';

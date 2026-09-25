@@ -4,7 +4,7 @@
 /*Pour le fond (images changeante) du site */
 
 body {
-	background-image: url("../images/mangas1.jpg");
+	background-image: url("../images/fondimage3.jpg");
 	animation: changeBackground 400s linear infinite;
   }
   
@@ -200,4 +200,53 @@ div.rouge {
     max-height: 50px; /* ajustation la taille maximale selon vos préférences */
     vertical-align: middle;
     margin-right: 5px; /* espace entre l'image et le texte */
+}
+
+/* Bouton d'appel à l'action, réutilisé sur plusieurs pages */
+.btn {
+    display: inline-block;
+    background-color: #a48a52;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #7a663d;
+}
+
+/* Retour du formulaire de contact (succès / erreur) */
+.form-feedback {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-feedback--success {
+    background-color: #e3f3e1;
+    color: #1b4d1b;
+}
+
+.form-feedback--error {
+    background-color: #f8e0e0;
+    color: #7a1f1f;
+}
+
+.form-feedback ul {
+    list-style: disc;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.form-feedback blockquote {
+    font-style: italic;
+    margin: 15px 0;
 }

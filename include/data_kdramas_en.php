@@ -83,7 +83,7 @@
         'resume' => 'Taking up at the end of the Joseon period, the dramatic series follows the facial reader (physiognomist) Choi Chun Juong while he tries to build an ideal nation. 
         Choi Chun Juong is the biggest guess and physiognomist of Joseon. He is a hero of turbulent times and he is the king of the people of Joseon. Choi Chun Juong has the great ambition to build a new nation after having reversed Joseon, who was ruined by men in power. 
         With a good appearance, Choi Chun Jong is a sophisticated man who excels in the arts, especially martial arts, games of chance, song and dance. It is also a romantic who makes every effort for the woman he loves. With a sense of words and a brilliant spirit for politics, he will create a miracle, making Yi ha eung the most powerful man of Joseon, of the son of Yi Ha Eung, Lee Jae Hwang, a king and Min Ja Young, a girl from the streets, in the Empress of Joseon.',
-        'épisodes_total '=>' 13 ',    
+        'episodes_total' => '13',
         'durer' => '1h',
         'reseau_origine' => 'Youku',
         'pays' => 'Korean',

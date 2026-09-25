@@ -4,23 +4,23 @@
 
     <section>
         <h2>Contact</h2>
-        <form method="post" action="reception.php">
+        <form method="post" action="reception.php" novalidate>
             <fieldset>
                 <legend><b>A remplir :</b></legend>
-                <div>
-                    <label for="nb1">NOM et prénom :</label>
-                    <input type="text" name="nb1" />
+                <div class="form-field">
+                    <label for="nom">Nom et prénom :</label>
+                    <input type="text" id="nom" name="nom" autocomplete="name" required />
                 </div>
-                <div>
-                    <label for="nb2">Adresse mail :</label>
-                    <input type="text" name="nb2" />
+                <div class="form-field">
+                    <label for="email">Adresse mail :</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required />
                 </div>
-                <div >
-                    <label for="nb3">Votre message :</label>
-                    <input class="messg" type="text" name="nb3" />
+                <div class="form-field">
+                    <label for="message">Votre message :</label>
+                    <textarea class="messg" id="message" name="message" rows="5" required></textarea>
                 </div>
                 <div class="valid">
-                    <input type="submit" name="valider" value="OK" />
+                    <button type="submit" name="valider">Envoyer</button>
                 </div>
             </fieldset>
         </form>
@@ -51,7 +51,7 @@
                 <img src="images/mangas60.jpg" alt="Manga 3">
             </div>
             <div class="slide">
-                <img src="images/mangas61.webp" alt="Manga 4">
+                <img src="images/mangas61.jpg" alt="Manga 4">
             </div>
         </div>
     </section>
