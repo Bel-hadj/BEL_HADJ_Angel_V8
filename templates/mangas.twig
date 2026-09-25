@@ -30,7 +30,7 @@
             <h2 id="{{ mangas.id }}">{{ mangas.titre }}</h2> {# Ajout de l'ID de l'article ici #}
             {# modèle du tome 1#}
             <article class="mangas_article">
-                <img src="{{ mangas.image }}" class="mangas_image">
+                <img src="{{ mangas.image }}" class="mangas_image" alt="Couverture de {{ mangas.titre }}">
                 <div class="mangas_info">
                     <p><span>Résumé :</span> {{ mangas.texte }}</p>
                     <p><span>Description :</span> {{ mangas.description }}</p>

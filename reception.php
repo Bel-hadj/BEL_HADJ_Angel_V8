@@ -1,24 +1,33 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
 
-<head>
-	<title>Réception de données de formulaires</title>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="reception.css">
-</head>
+// Initialise Twig
+include('include/twig.php');
+$twig = init_twig();
 
-<body>
-	<div class="container">
-		<!-- METHODE POST -->
-		<div class="form-data">
-			<h2>Variables reçues par la méthode POST :</h2>
-			<?php
-			foreach ($_POST as $key => $value) {
-				echo "<div>$key : $value</div>";
-			}
-			?>
-		</div>
-	</div>
-</body>
+$nom = trim($_POST['nom'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$message = trim($_POST['message'] ?? '');
 
-</html>
+$erreurs = [];
+
+if ($nom === '') {
+	$erreurs[] = 'Le nom et prénom sont obligatoires.';
+}
+
+if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	$erreurs[] = 'Une adresse mail valide est obligatoire.';
+}
+
+if ($message === '') {
+	$erreurs[] = 'Le message ne peut pas être vide.';
+}
+
+echo $twig->render('reception.twig', [
+	'titre' => $erreurs ? 'Formulaire incomplet' : 'Message envoyé',
+	'lang' => 'fr',
+	'description' => 'Confirmation d\'envoi du formulaire de contact Asians Dreams.',
+	'erreurs' => $erreurs,
+	'nom' => $nom,
+	'email' => $email,
+	'message' => $message,
+]);

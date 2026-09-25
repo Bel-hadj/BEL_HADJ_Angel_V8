@@ -1,48 +1,48 @@
-/*style de la page A propos*/
-
+/* Page À propos */
 
 .texte {
     text-align: center;
     border: 2px solid black;
-    padding: 10px;
-    width: 50%;
+    border-radius: var(--radius, 10px);
+    padding: 20px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
-/* Style pour les titres h2 */
 .texte h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 28px;
-    color: #e4d0d0;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
+    font-size: 26px;
+    color: #333;
+    border-bottom: 2px solid var(--color-gold, #a48a52);
+    padding-bottom: 8px;
     text-decoration: underline;
 }
 
-/* Style pour les titres h3 */
 .texte h3 {
-    font-size: 22px;
-    color: #ebe5e5;
-    margin-top: 30px;
+    font-size: 20px;
+    color: var(--color-primary-dark, #7c2727);
+    margin-top: 25px;
     text-decoration: underline;
 }
 
-/* Style pour les paragraphes */
 .texte p {
-    line-height: 1.6;
-    color: #f0e7e7;
+    line-height: 1.7;
+    color: #333;
     margin-bottom: 20px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
 }
 
-
-#about {
-    text-align: center;
+.texte p:hover {
+    transform: translateX(5px);
 }
 
 .image-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
 }
 
 .image-container a {
@@ -53,8 +53,8 @@
 }
 
 .image-container a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px #00000080;
+    transform: scale(1.08);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .manga-image,
@@ -62,26 +62,18 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
+    border-radius: var(--radius, 10px);
     border: 2px solid transparent;
 }
 
 .manga-image:hover,
 .kdrama-image:hover {
-    border-color: #ff0000;
-}
-
-
-
-.emoji-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    border-color: var(--color-gold, #a48a52);
 }
 
 .emoji {
     font-size: 2em;
-    animation: bounce 0.5s infinite alternate;
+    animation: bounce 1.4s ease-in-out infinite alternate;
 }
 
 @keyframes bounce {
@@ -90,47 +82,42 @@
     }
 
     100% {
-        transform: translateY(-20px);
-        /* Déplace l'emoji vers le haut */
+        transform: translateY(-10px);
     }
 }
 
-.texte p {
-    transition: transform 0.3s ease-in-out;
-}
-
-.texte p:hover {
-    transform: translateX(5px);
-}
-
-/*style de la condition générale*/
-
+/* Conditions Générales d'Utilisation */
 .condition_générale {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-family: var(--font-body, Arial, sans-serif);
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius, 10px);
+    text-align: left;
+    margin-top: 20px;
 }
 
 .condition_générale h2 {
-    font-size: 24px;
+    font-size: 22px;
     color: #333;
     margin-bottom: 20px;
+    border-bottom: none;
+    text-decoration: none;
 }
 
 .condition_générale h3 {
-    font-size: 20px;
-    color: #e3cfcf;
+    font-size: 18px;
+    color: var(--color-primary-dark, #7c2727);
     margin-top: 20px;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 .condition_générale p {
-    font-size: 16px;
-    color: #000000;
-    line-height: 1.5;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
     margin-bottom: 15px;
-    font-weight: bolder;
+    font-weight: normal;
 }
 
 .condition_générale i {
@@ -138,5 +125,20 @@
 }
 
 .contacter {
-    text-decoration: underline;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 600px) {
+    .texte {
+        padding: 15px;
+    }
+
+    .manga-image,
+    .kdrama-image {
+        width: 140px;
+        height: 140px;
+    }
 }

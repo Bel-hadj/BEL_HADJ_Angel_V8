@@ -3,10 +3,13 @@
     $twig = init_twig();
 
     include('include/data_kpop.php');
-    
+
     echo $twig->render('celebrite.twig', [
+        'titre' => 'K-Pop',
+        'page' => 'kpop',
         'all_articles' => $categorie2,
         'categorie' => 'celebrite',
         'lang' => $lang,
+        'description' => 'Actualités et présentation des groupes et artistes K-Pop : BTS, Blackpink, Stray Kids, TXT et Twice.',
     ]);
 ?>

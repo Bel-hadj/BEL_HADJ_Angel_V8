@@ -28,13 +28,13 @@
                 <!-- Autres éléments de l'article ici -->
                 <div class="serie_1">
                     <div class="image_gauche">
-                            <img src="{{ article.image_1 }}">
-                    
+                            <img src="{{ article.image_1 }}" alt="Affiche de {{ article.titre }}">
+
                     </div>
                     <div class="partie_droite">
                         <h2>{{ article.titre }}</h2>
                         <h3>{{ article.sous_titre }}</h3>
-                        <h4>{{ article.sous_titre_2 }}</h4>
+                        <h4>{{ article.sous_titre2 }}</h4>
                         <p>Description :</p>
                         <ul class="liste_de_description">
                             <li><span>Episodes :</span>{{ article.episodes_total }}</li>
@@ -50,10 +50,10 @@
                     </div>
                 </div>
                 <div class="noms">
-                    <img src="{{ article.image_2 }}" class="image-arrondie_1" alt="Image arrondie 1">
-                    <img src="{{ article.image_3 }}" class="image-arrondie_2" alt="Image arrondie 2">
-                    <img src="{{ article.image_4 }}" class="image-arrondie_3" alt="Image arrondie 3">
-                    <img src="{{ article.image_5 }}" class="image-arrondie_4" alt="Image arrondie 4">
+                    <img src="{{ article.image_2 }}" class="image-arrondie_1" alt="Scène de {{ article.titre }} 1">
+                    <img src="{{ article.image_3 }}" class="image-arrondie_2" alt="Scène de {{ article.titre }} 2">
+                    <img src="{{ article.image_4 }}" class="image-arrondie_3" alt="Scène de {{ article.titre }} 3">
+                    <img src="{{ article.image_5 }}" class="image-arrondie_4" alt="Scène de {{ article.titre }} 4">
 
                     <ul>
                         {% for element in article.noms %}

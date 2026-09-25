@@ -4,14 +4,9 @@
 include('include/twig.php');
 $twig = init_twig();
 
-// Lancement du moteur Twig :
-// $twig->render($modele-de-page, $tableau-de-variables)
-//
-// Le premier paramètre est le nom du modèle de page (le fichier Twig) à utiliser
-//
-// Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
-// Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 echo $twig->render('contact.twig', [
-	'titre' => 'Page contact',
-	'message' => 'Un message de bienvenu sur ma page d\'accueil. Attention les guillements doivent être échappées (avec un anti-slash)'
+	'titre' => 'Contact',
+	'page' => 'contact',
+	'lang' => 'fr',
+	'description' => 'Contactez Asians Dreams pour toute question sur les K-Dramas, la K-Pop ou les Mangas.',
 ]);

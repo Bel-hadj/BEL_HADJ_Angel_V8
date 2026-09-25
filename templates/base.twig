@@ -1,76 +1,52 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ lang|default('fr') }}">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ titre }} | Asians Dreams</title>
+	<meta name="description" content="{{ description|default('Asians Dreams : un site consacré à la culture pop asiatique, entre K-Dramas, K-Pop et Mangas.') }}">
+	<link rel="icon" type="image/avif" href="images/logo.avif">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/kdramas.css">
 	<link rel="stylesheet" href="css/mangas.css">
 	<link rel="stylesheet" href="css/contact.css">
 	<link rel="stylesheet" href="css/a_propos.css">
 	<link rel="stylesheet" href="css/kpop.css">
-
-	<script src="carousel.js"></script>
 </head>
 
 <body>
 	<header role="banner"> {#HEADER#}
-		<img class="banniere" src="images/image20.jpg" alt="My name">
+		<div class="banniere-wrapper">
+			<img class="banniere" src="images/image20.jpg" alt="Bannière du site Asians Dreams">
+			<a class="logo" href="accueil.php">Asians Dreams</a>
+		</div>
 
 		<nav role="navigation" aria-label="Menu principal">
-		<ul class="menu">
-			<!-- Menu présent dans toutes les pages héritant (extends) de ce modèle j'ai changé tout -->
-			<li><a href="accueil.php">Accueil</a></li>
-			<li><a href="mangas.php">Mangas</a></li>
-			<li><a href="kpop.php">K-Selection</a></li>
-			<li><a href="kdrama.php">Kdramas</a></li>
-			<li><a href="a_propos.php">À propos</a></li>
-			<li><a href="contact.php">Contact</a></li>
-		</ul>
+			<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
+				<span></span><span></span><span></span>
+			</button>
+			<ul class="menu" id="menu-principal">
+				<li><a href="accueil.php"{% if page == 'accueil' %} class="active" aria-current="page"{% endif %}>Accueil</a></li>
+				<li><a href="mangas.php"{% if page == 'mangas' %} class="active" aria-current="page"{% endif %}>Mangas</a></li>
+				<li><a href="kpop.php"{% if page == 'kpop' %} class="active" aria-current="page"{% endif %}>K-Selection</a></li>
+				<li><a href="kdrama.php"{% if page == 'kdrama' %} class="active" aria-current="page"{% endif %}>Kdramas</a></li>
+				<li><a href="a_propos.php"{% if page == 'a_propos' %} class="active" aria-current="page"{% endif %}>À propos</a></li>
+				<li><a href="contact.php"{% if page == 'contact' %} class="active" aria-current="page"{% endif %}>Contact</a></li>
+			</ul>
 		</nav>
 	</header>
 
 	<main>
-		{% block main %}
-		<div class="block-pere">
-
-			<h1 class="titre_principale">Asian K-Mangas</h1>
-
-
-			<section class="kdrama-section">
-				<h2>K-Dramas</h2>
-			</section>
-		</div>
-		<p>Les K-Dramas, abréviation de Korean Dramas, sont des séries télévisées sud-coréennes. Ils sont connus pour
-			leurs intrigues captivantes, leurs romances complexes et leurs performances d'acteurs de haute qualité.</p>
-		<p>Les K-Dramas sont populaires dans le monde entier et ont une base de fans dévouée qui apprécie la diversité
-			des genres, des comédies romantiques aux thrillers politiques.</p>
-		<p>Plongez-vous dans l'univers des K-Dramas et explorez une multitude de séries qui sauront vous divertir et
-			vous émouvoir.</p>
-
-		<section class="manga-section">
-			<h2>Mangas</h2>
-
-			<p>Les Mangas sont des bandes dessinées japonaises qui couvrent une vaste gamme de genres, des aventures
-				épiques aux récits fantastiques en passant par les tranches de vie et les romances.</p>
-			<p>Les Mangas sont appréciés pour leurs illustrations uniques, leurs histoires riches en émotions et leurs
-				personnages mémorables.</p>
-			<p>Plongez-vous dans l'univers des Mangas et découvrez des histoires passionnantes, des mondes imaginaires
-				fascinants et des aventures inoubliables.</p>
-		</section>
-
-		<div class="image_with_emoji">
-			<span class="emoji">😊🤣😂😘🥱</span>
-		</div>
-
-		{% endblock main %}
+		{% block main %}{% endblock main %}
 	</main>
-	
+
 	<footer role="contentinfo"> {# FOOTER #}
 		{% block footer %}
-		<nav role="navigation">
+		<nav role="navigation" aria-label="Menu de pied de page">
 			<div class="footer-content">
 				<div class="footer">
 					<a href="accueil.php">Accueil</a>
@@ -78,7 +54,7 @@
 					<a href="mangas.php">Mangas</a>
 					<a href="kpop.php">k-Selection</a>
 					<a href="contact.php">Contact</a>
-					<a href="https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#">Mention légales</a>
+					<a href="https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires#">Mentions légales</a>
 				</div>
 				<div class="footer-name">
 					<p>© 2024 Bel Hadj Angel. Tous droits réservés.</p>
@@ -87,6 +63,9 @@
 		</nav>
 		{% endblock footer %}
 	</footer>
+
+	<script src="javascripts/nav.js" defer></script>
+	<script src="javascripts/carousel.js" defer></script>
 </body>
 
 </html>

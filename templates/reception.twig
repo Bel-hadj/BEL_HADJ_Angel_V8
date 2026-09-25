@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<section class="reception">
+    {% if erreurs is not empty %}
+        <h1>Formulaire incomplet</h1>
+        <div class="form-feedback form-feedback--error">
+            <p>Merci de corriger les points suivants avant de renvoyer votre message :</p>
+            <ul>
+                {% for erreur in erreurs %}
+                <li>{{ erreur }}</li>
+                {% endfor %}
+            </ul>
+            <a href="contact.php" class="btn">Retour au formulaire</a>
+        </div>
+    {% else %}
+        <h1>Message envoyé</h1>
+        <div class="form-feedback form-feedback--success">
+            <p>Merci {{ nom }}, votre message a bien été reçu. Nous vous répondrons à l'adresse
+                <strong>{{ email }}</strong> dès que possible.</p>
+            <blockquote>{{ message }}</blockquote>
+            <a href="accueil.php" class="btn">Retour à l'accueil</a>
+        </div>
+    {% endif %}
+</section>
+{% endblock main %}
