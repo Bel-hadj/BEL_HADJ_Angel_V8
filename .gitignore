@@ -1,0 +1,15 @@
+# Secrets et configuration locale (ne jamais publier)
+.env
+include/config.local.php
+
+# Données générées à l'exécution
+storage/*
+!storage/.gitkeep
+!storage/.htaccess
+cache/
+
+# Divers
+*.log
+Thumbs.db
+.DS_Store
+.vscode/

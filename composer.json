@@ -1,0 +1,13 @@
+{
+    "name": "bel-hadj/asian-dreams",
+    "description": "Asian Dreams : site de découverte des K-Dramas, de la K-Pop et des mangas (PHP + Twig).",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0",
+        "twig/twig": "^3.7"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}
