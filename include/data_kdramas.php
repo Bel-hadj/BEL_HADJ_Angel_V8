@@ -4,7 +4,7 @@
 // 'resume' est une liste de paragraphes ; 'casting' associe chaque acteur à sa photo.
 // Les champs vides ou absents ne sont pas affichés.
 
-$categorie3 = [
+return [
     [
         'id' => 1,
         'titre' => 'Indulgence',

@@ -3,7 +3,7 @@
 // K-Pop entries (English version).
 // 'sous_titre' is the news article headline, 'texte' a list of paragraphs.
 
-$categorie2 = [
+return [
     [
         'id' => 1,
         'titre' => 'BTS',

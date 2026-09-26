@@ -3,7 +3,7 @@
 // Manga entries (English version).
 // 'texte' is the summary (list of paragraphs), 'description' a short presentation.
 
-$categorie1 = [
+return [
     [
         'id' => 1,
         'titre' => 'Chainsaw Man Vol. 1',

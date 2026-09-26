@@ -4,7 +4,7 @@
 // 'resume' is a list of paragraphs; 'casting' pairs each actor with a photo.
 // Empty or missing fields are not displayed.
 
-$categorie3 = [
+return [
     [
         'id' => 1,
         'titre' => 'Indulgence',

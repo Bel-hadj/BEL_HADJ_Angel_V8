@@ -3,7 +3,7 @@
 // Fiches mangas (version française).
 // 'texte' est le résumé (liste de paragraphes), 'description' une courte présentation.
 
-$categorie1 = [
+return [
     [
         'id' => 1,
         'titre' => 'Chainsaw Man T01',

@@ -7,6 +7,7 @@ use Twig\TwigFunction;
 
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/i18n.php';
+require_once __DIR__ . '/data.php';
 require_once ROOT_DIR . '/vendor/autoload.php';
 
 // Pages du site : clé => [URL française, URL anglaise].

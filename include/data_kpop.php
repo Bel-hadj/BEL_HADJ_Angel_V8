@@ -3,7 +3,7 @@
 // Fiches K-Pop (version française).
 // 'sous_titre' est le titre de l'article d'actualité, 'texte' une liste de paragraphes.
 
-$categorie2 = [
+return [
     [
         'id' => 1,
         'titre' => 'BTS',
